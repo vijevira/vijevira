@@ -1,0 +1,72 @@
+ 
+ 
+ body {
+          background-image: url("../img/wallpaper.jpg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .container {
+          width: 100%;
+          height: 100%;
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .displayProfile {
+          background-image: url("../img/displayprofile.jpg");
+          background-size: cover;
+          background-position: center;
+          width: 250px;
+          height: 285px;
+          margin: 0 auto;
+          border: 3px ridge #9d9de1;
+        }
+        
+         .indexBackground {
+          font-size: 14px;
+          background: url("../img/indexBackground.jpg");
+          color: #19194d;
+        }
+        .back{background: url("../img/back2.jpg")}
+        
+        .name{
+        font-size:28px;
+        font-weight: bolder;
+        }
+        
+        .padding{
+        border: 3px ridge #9d9de1;
+        }
+        
+        .signin{
+         color:red;
+         font-size:28px;
+         margin: 0px 0 -25px 1420px;
+        }
+        
+        .icons{
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+        }
+        
+        .icons a {
+          text-decoration: none;
+        }
+
+        .icons a svg {
+          fill: #9d9de1 !important;
+          transform: scale(1.5);
+        }
+ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
