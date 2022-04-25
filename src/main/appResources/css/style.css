@@ -1,3 +1,25 @@
+.red{color:#fff!important;background-color:#ff0000!important;}
+.orange{color:#fff!important;background-color:#ff3300!important;}
+.orange2{color:#fff!important;background-color:#ff6600!important;}
+.white{color:#000!important;background-color:#fff!important;}
+
+.green{color:#fff!important;background-color:#33ff00!important;}
+.gold{color:#fff!important;background-color:#FFCC00!important;}
+.yellow{color:#fff!important;background-color:#FFFF00!important;}
+.lime{color:#fff!important;background-color:#00FF00!important;}
+.grey{color:#fff!important;background-color:#616161!important;}
+ .wide{letter-spacing:6px;}
+ .xlarge{font-size:24px!important}
+ .xxlarge{font-size:36px!important}
+ .xxxlarge{font-size:48px!important}
+ .jumbo{font-size:64px!important}
+ .sidebar{height:100%;width:246px;background-color:#231f1f;position:fixed!important;z-index:1;overflow:auto}
+ .marginLeft375{margin-left:375px;}
+ .tcs{background-image: url("../img/tcs.jpg");}
+ .link{color:red;}
+ .errorMsg{color:red;font-size:12px; font-family:"monospace"; margin-bottom: -15px;  margin-top: -15px; letter-spacing: 1px;}
+ 
+ 
  
  
  body {
@@ -17,7 +39,7 @@
         }
 
         .displayProfile {
-          background-image: url("../img/displayprofile.jpg");
+          background-image: url("../img/images/displayProfile.jpg");
           background-size: cover;
           background-position: center;
           width: 250px;
@@ -62,11 +84,7 @@
           fill: #9d9de1 !important;
           transform: scale(1.5);
         }
- body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {margin-bottom: 12px}
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {width: 120px;background: #222;}
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {margin-left: 120px}
+
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.largeImage{background:gray; text-align:center;}
