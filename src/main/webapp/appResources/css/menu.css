@@ -1,19 +1,1 @@
 
-.sidebar{height:300px;width:150px;background-color:#bcc3d0;position:fixed!important;z-index:1;overflow:auto;}
-.border-right{border-right:1px solid #ccc!important}
-.large{font-size:18px!important}
-.bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
-.button{
-	border:none;
-	display:inline-block;
-	padding:9px 16px;
-	vertical-align:middle;
-	overflow:hidden;
-	text-decoration:none;
-	color:inherit;
-	background-color:inherit;
-	text-align:center;
-	cursor:pointer;
-	white-space:nowrap
-}
-.xlarge{font-size:24px!important}
