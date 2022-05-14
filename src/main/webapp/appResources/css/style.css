@@ -2,7 +2,7 @@
 .orange{color:#fff!important;background-color:#ff3300!important;}
 .orange2{color:#fff!important;background-color:#ff6600!important;}
 .white{color:#000!important;background-color:#fff!important;}
-
+.black{color:#fff!important;background-color:#000!important;}
 .green{color:#fff!important;background-color:#33ff00!important;}
 .gold{color:#fff!important;background-color:#FFCC00!important;}
 .yellow{color:#fff!important;background-color:#FFFF00!important;}
@@ -89,3 +89,4 @@
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 .largeImage{background:gray; text-align:center;}
+.header404{background:black;}
