@@ -27,9 +27,9 @@ class myHeader extends HTMLElement{
 				<div class="menu" style="float:left;">
 			  <button class="button teal xlarge" onclick="openClose()">☰</button>
 			</div>
-					<a href="./pages/details.html"><div class="logo">
+					<a href="./index.html"><div class="logo">
 					</div></a>
-					<a href=""><div class="imageIcon"></div></a>
+					<a href="./details.html"><div class="imageIcon"></div></a>
 				</header>
 				<div id="mySidebar" style="display:none;width:168px;height:318px; margin:0 0 -318px 0;">
 					  <div class="sidebar  border-right xlarge">
