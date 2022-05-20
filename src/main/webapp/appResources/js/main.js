@@ -43,9 +43,9 @@ class myHeader extends HTMLElement{
 				</header>
 				<div id="mySidebar" style="display:none;width:168px;height:318px; margin:0 0 -318px 0;">
 					  <div class="sidebar  border-right xlarge">
-					  <a href="./details.html" class="bar-item button" target="_blank">About Me</a>
-					  <a href="#" class="bar-item button">Investment</a>
-					  <a href="#" class="bar-item button">Photos</a>
+					  <a href="./details.html" class="bar-item button">About Me</a>
+					  <a href="./404.html" class="bar-item button">Investment</a>
+					  <a href="./personalPhoto.html" class="bar-item button">Photos</a>
 				</div>
 				
 			</body>
