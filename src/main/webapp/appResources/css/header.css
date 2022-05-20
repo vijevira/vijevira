@@ -1,7 +1,7 @@
 .header{
-	background:#15ff0b;
+	background:transparent;
 	height:50px;
-	margin: -8px -8px 5px 0px;
+	margin: 5px 0px 5px 0px;
 }
 .logo{
 	float:left;
@@ -11,6 +11,16 @@
 	width:180px;height:60px;
 	position:relative;
 	top:0px; left:0px;
+}
+.logout{
+	background-image:url(../../appResources/img/close.png);
+	float:right;
+	margin-top:-3px;
+	background-color:grey;
+	background-size:60px; 
+	position:relative;
+	width:60px; height:60px;
+	cursor:pointer;
 }
 .imageIcon{
 	float:right;
@@ -29,7 +39,7 @@
 .button{
 	border:none;
 	display:inline-block;
-	padding:9px 16px;
+	padding:10px 16px;
 	vertical-align:middle;
 	overflow:hidden;
 	text-decoration:none;
@@ -40,10 +50,16 @@
 	white-space:nowrap
 }
 .xlarge{font-size:24px!important}
-.teal,.teal:hover{color:#fff!important;background-color:#009688!important;}
+.teal,.teal:hover{color:#fff!important;background-color:transparent!important;}
 .menu{
 	float:left;
 	font-family: Verdana,sans-serif;
     font-size: 15px;
     line-height: 1.43;
+}
+.horizontalLine{
+  width: 22px;
+  height: 2px;
+  background-color: grey;
+  margin: 6px -4px;
 }

@@ -16,6 +16,11 @@ function openClose(){
 	}
 }
 
+function logout(){
+	location.href="./login.html"
+}
+
+
 class myHeader extends HTMLElement{
 	connectedCallback(){
 		this.innerHTML=`
@@ -25,11 +30,16 @@ class myHeader extends HTMLElement{
 			<body>
 				<header class="header">
 				<div class="menu" style="float:left;">
-			  <button class="button teal xlarge" onclick="openClose()">☰</button>
+			  <button class="button teal xlarge" onclick="openClose()">
+			  	<div class="horizontalLine"></div>
+  				<div class="horizontalLine"></div>
+  				<div class="horizontalLine"></div>
+			  </button>
 			</div>
 					<a href="./index.html"><div class="logo">
 					</div></a>
 					<a href="./details.html"><div class="imageIcon"></div></a>
+					<div class="logout" onclick="logout()"></div>
 				</header>
 				<div id="mySidebar" style="display:none;width:168px;height:318px; margin:0 0 -318px 0;">
 					  <div class="sidebar  border-right xlarge">
@@ -54,6 +64,8 @@ class myFooter extends HTMLElement{
 			<body>
 				<footer class="footer" >
 					<span class="copyright">Copyright &copy; vijevira</span>
+					<span class="verticleLine"></span>
+					<span class="contactMe"><a href="mailto:vijevira@engineer.com" style="color:white;text-decoration:dotted;">Contact Me</a></span>
 					<span class="links">
 					<a href="https://www.facebook.com/vijevirat" target="_blank"><div class="facebook" ></div></a>
 					<a href="https://www.instagram.com/vijevira" target="_blank"><div class="instagram" ></div></a>

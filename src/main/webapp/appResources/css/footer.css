@@ -2,6 +2,11 @@
 	background:black;
 	height:40px;
 }
+.contactMe{
+	margin:10px 0px 0 0;
+	float:right;
+	color:white;
+}
  .copyright{
 	margin:10px 10px 0 0;
 	float:right;
@@ -58,5 +63,11 @@
 	float: left;
     margin: 7px 0px 0px 10px;
  }
- 
+ .verticleLine{
+ 	float: right;
+    width: 2px;
+    height: 15px;
+    background-color: white;
+    margin: 13px 13px;
+}
  
