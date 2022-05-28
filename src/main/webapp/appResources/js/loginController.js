@@ -71,6 +71,11 @@ const checkPassword = (passwordEl) => {
     return valid;
 };
 
+const isEmailValid = (email) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
 const checkEmail = (emailEl) => {
     let valid = false;
     const email = emailEl.value.trim();
@@ -84,16 +89,6 @@ const checkEmail = (emailEl) => {
     }
     return valid;
 };
-
-
-
-
-const isEmailValid = (email) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-};
-
-
 const debounce = (fn, delay = 500) => {
     let timeoutId;
     return (...args) => {
@@ -141,6 +136,23 @@ function showLogin(){
 	sig.innerHTML=temp;
 };
 function signup(){
-	const value=0;
+	const emailEl=document.getElementById('email');
+	if (checkEmail(emailEl)){
+		console.log("valid email");
+		const { spawn } = require('child_process');
+const temperatures = []; // Store readings
+
+const sensor = spawn('python', ['sensor.py']);
+sensor.stdout.on('data', function(data) {
+
+    // convert Buffer object to Float
+    temperatures.push(parseFloat(data));
+    console.log(temperatures);
+});                                        
+   console.log("success");
+
+	}else{
+		window.alert("Please enter valid email address")
+	}
 
 }
