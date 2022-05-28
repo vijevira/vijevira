@@ -19,7 +19,7 @@
  .link{color:red;}
  .link2{color:blue;}
  .errorMsg{color:red;font-size:12px; font-family:"monospace"; margin-bottom: -15px;  margin-top: -15px; letter-spacing: 1px;}
- 
+ .textDeclarationBlink{text-decoration-line: blink;}
  
  
  
