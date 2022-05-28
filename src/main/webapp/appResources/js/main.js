@@ -65,7 +65,7 @@ class myFooter extends HTMLElement{
 				<footer class="footer" >
 					<span class="copyright">Copyright &copy; vijevira</span>
 					<span class="verticleLine"></span>
-					<span class="contactMe"><a href="mailto:vijevira@engineer.com" style="color:white;text-decoration:dotted;">Contact Me</a></span>
+					<span class="contactMe"><a href="mailto:vijevira@engineer.com" style="color:white;text-decoration:dotted;background:inherit;">Contact Me</a></span>
 					<span class="links">
 					<a href="https://www.facebook.com/vijevirat" target="_blank"><div class="facebook" ></div></a>
 					<a href="https://www.instagram.com/vijevira" target="_blank"><div class="instagram" ></div></a>
