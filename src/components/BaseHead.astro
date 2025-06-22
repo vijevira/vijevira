@@ -1,0 +1,73 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = '/projects-placeholder-1.jpg' } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- SEO Metadata -->
+<title>Vijendra Kumar – Software Engineer | Backend Specialist | AI & Web Developer</title>
+<meta name="title" content="Vijendra Kumar – Software Engineer | Backend Specialist | AI & Web Developer" />
+<meta name="description" content="Official personal website of Vijendra Kumar, a versatile software engineer specializing in backend development, AI systems, payment integrations, and modern web technologies." />
+<meta name="keywords" content="Vijendra Kumar, vijevira, vijevirat, software engineer India, Vijendra Kumar Software Engineer, Vijemdra Kumar TCS, Vijendra Kumar Apsona, Vijendra Kumar Pratishthan, backend developer, Node.js, Python developer, Webflow developer, AI prompt engineer, Astro portfolio, payment systems engineer, open source contributor, tech blog India" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="English" />
+<meta name="revisit-after" content="7 days" />
+<meta name="author" content="Vijendra Kumar" />
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vijendra Kumar – Senior Software Engineer" />
+<meta property="og:description" content="Explore the portfolio, projects, blogs, and certifications of Vijendra Kumar, a developer passionate about backend systems, AI, and design." />
+<meta property="og:image" content="https://vijevira.in/social-preview.jpg" />
+<meta property="og:url" content="https://vijevira.in" />
+<meta property="og:site_name" content="Vijendra Kumar" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vijendra Kumar – Senior Software Engineer" />
+<meta name="twitter:description" content="Explore the portfolio, projects, blogs, and certifications of Vijendra Kumar, a developer passionate about backend systems, AI, and design." />
+<meta name="twitter:image" content="https://vijevira.in/social-preview.jpg" />
+<meta name="twitter:creator" content="@vijevirat" />
+<meta name="twitter:site" content="@vijevirat" />
+
+<!-- Font preloads -->
+<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />

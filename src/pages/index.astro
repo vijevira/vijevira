@@ -1,0 +1,223 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>👋 Hello, I'm Vijendra</h1>
+
+      <h3>📍 Who I Am</h3>
+      <p>
+        I'm a highly versatile and dedicated <strong>Software Engineer</strong> with
+        a strong foundation in backend technologies and modern web frameworks. Born
+        in <strong>Bihar</strong> and currently living in <strong
+          >Bangalore</strong
+        >, I hold a <strong
+          >Bachelor’s degree in Computer Science and Engineering</strong
+        > from the University Institute of Technology, The University of Burdwan
+        (CGPA: <strong>8.38</strong>).
+      </p>
+      <p>
+        My academic path has been consistent and strong, scoring <strong
+          >84.2%</strong
+        > in 12th grade at Delhi Public School, Varanasi, and a <strong
+          >9.8 CGPA</strong
+        > in 10th grade from Jawahar Navodaya Vidyalaya.
+      </p>
+
+      <h3>💼 My Work Journey</h3>
+      <p>
+        I bring over <strong>3 years of industry experience</strong> in building
+        robust applications and secure backend systems. My career began at <strong
+          >Tata Consultancy Services (TCS)</strong
+        > (Oct 2021 – Aug 2022), where I contributed to frontend development using
+        HTML, CSS, JavaScript, Angular, and Java. I helped build reusable UI components,
+        improved layouts, and implemented input validation systems for enterprise-scale
+        web applications.
+      </p>
+
+      <p>
+        I then joined <strong>Pratishthan Software Ventures</strong> (Sep 2022 –
+        Aug 2024), where I engineered mission-critical payment infrastructure for
+        banks and financial institutions. I worked on systems such as <strong
+          >SEPA (Single Euro Payments Area)</strong
+        >, <strong>QCBIP (Qatar Central Bank Instant Payments)</strong>, <strong
+          >UAERT (UAE Real-Time Transfers)</strong
+        >, and <strong>SWIFT</strong> messaging flows. My responsibilities included
+        developing <strong>real-time payment flows</strong>, managing <strong
+          >return/reject cycles</strong
+        >, and building <strong>SLA tracking mechanisms</strong> to meet strict regulatory
+        standards. I also enhanced systems integrated with <strong>NACH</strong>
+        and <strong>NPCI</strong>, contributing to the stability and reliability
+        of national payment systems.
+      </p>
+
+      <p>
+        At Pratishthan, I worked across the full stack—developing performant
+        services, securing API integrations, handling Kafka-based event streams,
+        and ensuring compliance with <strong>ISO 20022</strong>. I collaborated
+        with banking clients and cross-functional teams to deliver
+        production-ready modules in agile environments, further sharpening my
+        skills in building scalable, fault-tolerant systems within the fintech
+        domain.
+      </p>
+
+      <p>
+        I currently work as a <strong>Senior Software Engineer at Apsona</strong
+        >, where I focus on backend engineering, DevOps integration, and system
+        architecture. One of my core contributions has been the development of <strong
+          >apsona_nexus_svc</strong
+        >, a secure Node.js service that provides REST APIs to interact with <strong
+          >HashiCorp Vault</strong
+        >. This service supports read, write, patch, and selective key deletion
+        for credentials, with token-based authentication, modular controller
+        design, robust error handling, and logging. I ensured code quality
+        through ESLint integration and comprehensive unit testing using Jest and
+        Supertest.
+      </p>
+
+      <p>
+        In addition to Vault integration, I led the implementation of the <strong
+          >clear cache system for all users</strong
+        >, designed the <strong
+          >Merge button for Salesforce Lightning List View</strong
+        >, and built functionality for <strong
+          >PDF storage uploads to client orgs</strong
+        >. I also contributed to the <strong
+          >segregation of legacy monorepos</strong
+        > into well-scoped services like PDF SVC and SFDC SVC, and upgraded services
+        from Node.js v8 to v18. I enforced strong linting rules and testing practices
+        across the codebase.
+      </p>
+
+      <p>
+        Another notable contribution was automating <strong
+          >Excel merge operations via schedulers</strong
+        >. I resolved long-standing issues related to mock duplication in XML
+        templates and JQuery. I implemented <strong>JWT token caching</strong> to
+        reduce Vault overhead, and added a user-friendly UI tool for <strong
+          >periodic cache clearing</strong
+        >. My work also touched Salesforce Flows, LWC components, Vault TTL
+        logic, and scalable API design. I consistently followed clean Git
+        workflows and documented solutions through Google Docs, diagrams, and
+        internal knowledge sharing.
+      </p>
+
+      <p>
+        Alongside my full-time roles, I’ve also taken on freelance positions as
+        an <strong>AI Prompt Engineer at Alignerr</strong> and an <strong
+          >AI Trainer at Outlier</strong
+        >. These opportunities allowed me to explore applied AI/ML, contributing
+        to prompt refinement and model training workflows on real-world data.
+      </p>
+
+      <p>
+        My work is rooted in solving real-world problems—whether it's building
+        scalable systems, improving developer experience, or enabling secure
+        integrations. I thrive in collaborative teams and value continuous
+        learning, knowledge sharing, and clean, thoughtful engineering.
+      </p>
+
+      <h3>🛠️ Tech Stack & Skills</h3>
+      <p>
+        My core stack includes:
+        <ul>
+          <li>
+            <strong>Languages:</strong> Python, JavaScript, Node.js, Java, HTML,
+            CSS
+          </li>
+          <li>
+            <strong>Frameworks:</strong> Angular, Loopback, Oe-Cloud, Node-RED
+          </li>
+          <li><strong>Databases:</strong> PostgreSQL</li>
+          <li><strong>Dev Tools:</strong> Docker, Postman, RabbitMQ, GitHub</li>
+          <li>
+            <strong>CS Fundamentals:</strong> Data Structures, Operating Systems,
+            DBMS
+          </li>
+        </ul>
+      </p>
+      <p>
+        I’ve solved <strong>350+ coding problems</strong>, manage <strong
+          >25+ public repositories on GitHub</strong
+        >, and constantly experiment with open-source and side projects.
+      </p>
+
+      <h3>📜 Certifications</h3>
+      <ul>
+        <li>
+          <strong>CutShort Certified</strong> – Python (Advanced) & JavaScript (Advanced)
+        </li>
+        <li><strong>Udemy:</strong> Python (2019)</li>
+        <li>
+          <strong>Coursera:</strong> Python Data Structures (2019), Algorithm Toolbox
+          (2019)
+        </li>
+        <li>
+          <strong>edX:</strong> Object-Oriented Programming in Java (2019)
+        </li>
+        <li><strong>PM YUVA Yojana:</strong> Entrepreneurship (2018)</li>
+        <li>
+          <strong>InfyTQ:</strong> Infosys Certified Software Programmer (2020)
+        </li>
+      </ul>
+
+      <h3>🏆 Achievements</h3>
+      <ul>
+        <li>Global Rank <strong>690</strong> – <em>Facebook Hacker Cup</em></li>
+        <li>Global Rank <strong>1899</strong> – <em>TCS CodeVita</em></li>
+      </ul>
+
+      <h3>🌐 Online Presence</h3>
+      <p>
+        I’m passionate about <strong
+          >design, development, Webflow, system architecture</strong
+        >, and <strong>machine learning</strong>. I'm always exploring new tools
+        and ways to build things that solve real problems.
+      </p>
+      <p>
+        You can check out my work and connect with me here:
+        <ul>
+          <li>
+            📧 Email: <a href="mailto:vijevira@engineer.com"
+              >vijevira@engineer.com</a
+            >
+          </li>
+          <li>
+            🌍 Website: <a href="https://vijevira.in" target="_blank"
+              >vijevira.in</a
+            >
+          </li>
+          <li>
+            💼 LinkedIn: <a
+              href="https://linkedin.com/in/vijevira"
+              target="_blank">linkedin.com/in/vijevira</a
+            >
+          </li>
+          <li>
+            💻 GitHub: <a href="https://github.com/vijevira" target="_blank"
+              >github.com/vijevira</a
+            >
+          </li>
+        </ul>
+      </p>
+
+      <h3>🚀 Let's Build Something Amazing</h3>
+      <p>
+        I’m always open to exciting collaborations, freelance gigs, or full-time
+        roles where I can solve real problems, learn with smart folks, and make
+        a meaningful impact. Let’s build something awesome together!
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
