@@ -7,9 +7,51 @@ import Layout from "../layouts/ProjectsPost.astro";
   description="Resume of Vijendra Kumar, a Senior Software Engineer with expertise in backend development, AI systems, and payment integrations."
   pubDate={new Date("June 22 2025")}
 >
+<style> 
+  .resume {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .resume h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  .resume h3 {
+    text-align: center;
+  }
+  .resume h4 {
+    text-align: center;
+  }
+
+
+  .resume ul {
+    margin-left: 20px;
+  }
+  .resume li {
+    margin-bottom: 10px;
+  }
+  .resume a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .resume a:hover {
+    text-decoration: underline;
+  }
+  .resume .text-gray-500 {
+    color: #6c757d;
+  }
+  .resume .text-gray-600 {
+    color: #5a6268;
+  }
+  .resume .align-center {
+    text-align: center;
+  }
+</style>
   <main
-    class="resume container mx-auto px-4 py-10 max-w-3xl text-base leading-relaxed"
-  >
+    class="resume container mx-auto px-4 py-10 max-w-3xl text-base leading-relaxed">
     <h1 class="text-3xl font-bold mb-4">Vijendra Kumar</h1>
     <p class="text-gray-700">Senior Software Engineer</p>
     <p class="text-gray-600 mt-1">
@@ -26,7 +68,7 @@ import Layout from "../layouts/ProjectsPost.astro";
         <h4 class="font-bold">
           Senior Software Engineer <span class="text-gray-500">@ Apsona</span>
         </h4>
-        <p class="text-sm text-gray-500">Sep 2024 – Present | Bangalore</p>
+        <p class="text-sm text-gray-500 align-center">Sep 2024 – Present | Bangalore</p>
         <ul class="list-disc list-inside mt-2">
           <li>
             Designed and implemented <strong>apsona_nexus_svc</strong>, a
@@ -66,7 +108,7 @@ import Layout from "../layouts/ProjectsPost.astro";
           Senior Software Engineer <span class="text-gray-500"
             >@ Pratishthan Software Ventures</span>
         </h4>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm text-gray-500 align-center">
           Sep 2023 – Aug 2024 · 1 yr · Bengaluru, India
         </p>
         <ul class="list-disc list-inside mt-2">
@@ -107,7 +149,7 @@ import Layout from "../layouts/ProjectsPost.astro";
         <h4 class="font-bold">
           Software Engineer <span class="text-gray-500">@ TCS</span>
         </h4>
-        <p class="text-sm text-gray-500">10/2021 – 08/2022, Kolkata</p>
+        <p class="text-sm text-gray-500 align-center">10/2021 – 08/2022, Kolkata</p>
         <ul class="list-disc list-inside mt-1">
           <li>
             Enhanced supervisor recommendation UI, headers/footers and
@@ -182,12 +224,12 @@ import Layout from "../layouts/ProjectsPost.astro";
 
     <section class="mt-8">
       <h3 class="text-xl font-semibold mb-2">Languages</h3>
-      <p>Hindi (Native), English (Full Professional)</p>
+      <p class="align-center">Hindi, English</p>
     </section>
 
     <section class="mt-8">
       <h3 class="text-xl font-semibold mb-2">Interests</h3>
-      <p>Programming, Puzzles, Chess</p>
+      <p class="align-center">Programming, Puzzles, Chess</p>
     </section>
   </main>
 </Layout>
