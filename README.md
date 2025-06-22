@@ -1,6 +1,6 @@
 # Astro Starter Kit: Projects
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-projects-starter-template)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-vijevira)
 
 ![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
 
@@ -24,10 +24,10 @@ Features:
 Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-projects-starter-template
+npm create cloudflare@latest -- --template=cloudflare/templates/astro-vijevira
 ```
 
-A live public deployment of this template is available at [https://astro-projects-starter-template.templates.workers.dev](https://astro-projects-starter-template.templates.workers.dev)
+A live public deployment of this template is available at [https://astro-vijevira.templates.workers.dev](https://astro-vijevira.templates.workers.dev)
 
 ## 🚀 Project Structure
 
