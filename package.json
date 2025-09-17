@@ -8,9 +8,9 @@
     ],
     "categories": [],
     "icon_urls": [
-      "/favicon.svg"
+      "https://vijevira.in/favicon.svg"
     ],
-    "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/33bbbf02-eda2-4d3f-b244-c27a280f3900/public",
+    "preview_image_url": "https://vijevira.in/logo.png",
     "publish": true
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.3.0",
     "astro": "5.7.4",
+    "sharp": "^0.34.3",
     "typescript": "5.8.3"
   },
   "devDependencies": {
