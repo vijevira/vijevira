@@ -1,11 +1,12 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import Image from "astro/components/Image.astro";
 ---
 
 <header>
   <nav>
-    <h2><a href="/"><img src="/logo.png" style="width: 100px; height: 32px"></a></h2>
+    <h2><a href="/" aria-label="Home"><Image src="/logo.png" alt="Home" inferSize width={100} height={32} fetchpriority="high" style={{ width: '100px', height: '32px' }}  /></a></h2>
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
