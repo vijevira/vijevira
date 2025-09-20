@@ -3,6 +3,7 @@ title: "Apsona for Salesforce"
 description: "Custom services and automation enhancements for Apsona, integrated with Salesforce ecosystem"
 pubDate: "2024-09-02"
 tags: ["salesforce", "apsona", "automation", "aws", "vault"]
+heroImage: "/apsona.png"
 ---
 
 # Apsona for Salesforce
