@@ -13,7 +13,7 @@ This project is a **desktop web application for managing personal notes**, inspi
 
 The application is built with a **Node.js backend** for APIs and authentication, while the frontend is developed without using any frontend frameworks, ensuring a lightweight and fast experience.
 
-👉 You can try out the live deployment here: [notes.domain.in](https://notes.domain.in)
+👉 You can try out the live deployment here: [notes.vijevira.in](https://notes.vijevira.in)
 
 ---
 
