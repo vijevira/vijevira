@@ -1,7 +1,7 @@
 ---
 title: "All Projects"
 description: "Backend development experience on SEPA, QCBIP, UAERT, NACH, SWIFT, and SCRT1 payment systems with focus on real-time payments, compliance, and scalability."
-pubDate: "Sep 17 2025"
+pubDate: "May 3 2026"
 heroImage: "/projects-placeholder-about.jpg"
 ---
 
