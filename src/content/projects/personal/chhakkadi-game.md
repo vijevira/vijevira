@@ -80,7 +80,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 
 ### Deployment
 - Frontend: Cloudflare Workers
-- Backend: Railway
+- Backend: [Railway](https://railway.com?referralCode=oHqhM6)
 - DNS & CDN: Cloudflare
 
 ---
@@ -150,7 +150,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 - Fast global CDN delivery.
 
 ### Backend
-- Hosted on Railway.
+- Hosted on [Railway](https://railway.com?referralCode=oHqhM6).
 - Persistent WebSocket support.
 - Custom API domain configured.
 
