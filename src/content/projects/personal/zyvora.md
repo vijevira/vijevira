@@ -1,9 +1,9 @@
 ---
 title: "Zyvora - SaaS Task Management Platform"
 description: "Enterprise-grade Jira-like project management platform with Kanban boards, sprints, and real-time collaboration built as a TypeScript monorepo"
-pubDate: "2026-05-30"
+pubDate: "2026-05-25"
 tags: ["React", "TypeScript", "Node.js", "Express", "Socket.IO", "PostgreSQL", "Redis", "TailwindCSS", "Turborepo", "BullMQ", "Docker", "SaaS", "Kanban", "Monorepo", "TanStack Query", "Zustand", "Vite", "Cloudflare", "Render"]
-heroImage: "/projects-zyvora.png"
+heroImage: "/project-zyvora.png"
 ---
 
 # Zyvora – SaaS Task Management Platform
