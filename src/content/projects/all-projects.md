@@ -106,3 +106,49 @@ I contributed to the design, development, and deployment of multiple standalone 
 - Improved **transaction efficiency, compliance, and SLA adherence**.  
 - Strengthened **security and flexibility** of banking systems through Return, Reject, and Sanction validations.  
 
+---
+---
+
+## Personal Projects
+
+Independent projects built to explore full-stack development, real-time systems, and SaaS product design.
+
+---
+
+### [Zyvora – SaaS Task Management Platform](/projects/personal/zyvora/)
+**May 2026**
+
+A full-featured **Jira-like project management platform** built as a TypeScript monorepo with enterprise-grade architecture.
+
+- Built a **multi-tenant SaaS** with role-based access control (Owner → Viewer) and workspace isolation.
+- Implemented **Kanban, Sprint Backlog, Calendar, and Timeline** board views with drag-and-drop (dnd-kit).
+- Real-time collaboration via **Socket.IO** — board updates broadcast instantly across all connected users.
+- Async **email and in-app notifications** via BullMQ job queues backed by Redis.
+- **Tech:** React, TypeScript, Vite, TailwindCSS, TanStack Query, Zustand, Node.js, Express, PostgreSQL, Redis, BullMQ, Socket.IO, Turborepo, Docker.
+- **Deployed:** Frontend on Cloudflare Workers · Backend on Render.
+
+---
+
+### [Chhakkadi – Multiplayer Card Game Platform](/projects/personal/chhakkadi-game/)
+**May 2026**
+
+A **real-time multiplayer card game platform** supporting three classic Indian trick-taking games.
+
+- Built **Chhakkadi** (6-player team game), **Dehla Pakad** (4-player, dynamic trump), and **Call Break** (4-player individual bidding).
+- Server-authoritative game logic with full rule enforcement: bidding, trump selection, trick resolution, scoring, and Gulam/Raja mechanics.
+- **Bot player support** via BotPlayer so games can start without a full lobby.
+- Dual deployment support: traditional Express + Socket.IO (Railway) and edge-native **Cloudflare Durable Objects** for stateful WebSocket rooms.
+- **Tech:** React, Vite, Socket.IO, Node.js, Express, Cloudflare Durable Objects.
+
+---
+
+### [Notes App](/projects/personal/notes-app/)
+**Aug 2024**
+
+A **Google Keep-inspired desktop web app** for managing personal notes.
+
+- Create, tag, archive, and trash notes with a clean vanilla JS frontend — no framework.
+- **Search** across all notes and filter by label with a special Label View.
+- Reminders with a dedicated upcoming-due-dates view.
+- **Tech:** Node.js, Express, Vanilla JavaScript, HTML, CSS.
+
