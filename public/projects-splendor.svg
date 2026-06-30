@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c1410"/>
+      <stop offset="100%" style="stop-color:#2d1f0e"/>
+    </linearGradient>
+    <!-- Gem colors -->
+    <linearGradient id="gemBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#93c5fd"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="gemRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fca5a5"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="gemGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#86efac"/>
+      <stop offset="100%" style="stop-color:#15803d"/>
+    </linearGradient>
+    <linearGradient id="gemWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1f5f9"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="gemBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+
+  <!-- Gold decorative line -->
+  <line x1="30" y1="270" x2="370" y2="270" stroke="#c9a027" stroke-width="1.5" opacity="0.4"/>
+  <line x1="30" y1="30" x2="370" y2="30" stroke="#c9a027" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Gem shapes (diamond polygon style) centered -->
+  <!-- Blue gem -->
+  <polygon points="130,95 155,118 130,155 105,118" fill="url(#gemBlue)" opacity="0.95"/>
+  <polygon points="130,95 155,118 130,125 105,118" fill="white" opacity="0.2"/>
+
+  <!-- Red gem -->
+  <polygon points="200,80 230,108 200,150 170,108" fill="url(#gemRed)" opacity="0.95"/>
+  <polygon points="200,80 230,108 200,115 170,108" fill="white" opacity="0.2"/>
+
+  <!-- Green gem -->
+  <polygon points="270,95 295,118 270,155 245,118" fill="url(#gemGreen)" opacity="0.95"/>
+  <polygon points="270,95 295,118 270,125 245,118" fill="white" opacity="0.2"/>
+
+  <!-- White gem (smaller, bottom left) -->
+  <polygon points="155,165 175,182 155,208 135,182" fill="url(#gemWhite)" opacity="0.9"/>
+  <polygon points="155,165 175,182 155,188 135,182" fill="white" opacity="0.25"/>
+
+  <!-- Black gem (smaller, bottom right) -->
+  <polygon points="245,165 265,182 245,208 225,182" fill="url(#gemBlack)" opacity="0.9"/>
+  <polygon points="245,165 265,182 245,188 225,182" fill="white" opacity="0.15"/>
+
+  <!-- Title text -->
+  <text x="200" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#c9a027" letter-spacing="3">SPLENDOR</text>
+  <text x="200" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#a38b5a" letter-spacing="3">MULTIPLAYER BOARD GAME</text>
+</svg>

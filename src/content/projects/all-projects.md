@@ -142,6 +142,47 @@ A **real-time multiplayer card game platform** supporting three classic Indian t
 
 ---
 
+### [WatchTower – Web Scraping & Notification Platform](/projects/personal/watchtower/)
+**May 2026**
+
+A **SaaS platform that monitors websites, RSS feeds, and JSON APIs** for new content and delivers notifications to Discord, Slack, Telegram, or custom webhooks.
+
+- Scrapes HTML pages (custom CSS selectors), RSS/Atom feeds, and JSON APIs — plus a special parser for Netmarble forums.
+- **Three-stage BullMQ pipeline**: Monitor → Processing → Delivery workers, each with concurrency control and exponential backoff retries (4 attempts).
+- External cron (cron-job.org) triggers scraping cycles; workers process jobs asynchronously within 50s windows.
+- Full delivery log per post: status, HTTP response code, error messages per attempt.
+- **Tech:** React, TypeScript, Fastify, PostgreSQL, Redis, BullMQ, Drizzle ORM, Cheerio, Turborepo, pnpm.
+- **Deployed:** Frontend + Backend on Wasmer.io serverless.
+
+---
+
+### [Cuff the Bluff – Multiplayer Dice Bluffing Game](/projects/personal/cuff-the-bluff/)
+**Jun 2026**
+
+A **real-time Liar's Dice game** for up to 15 players with bot AI, built entirely on Cloudflare's edge infrastructure.
+
+- Full Liar's Dice rules: Normal and Wild bid transitions, CUFF! challenge mechanic, elimination-based gameplay.
+- **Probability-based bot AI** with human-like pacing and realistic bluffing heuristics.
+- **Reconnect support** via localStorage tokens — refresh the page to rejoin mid-game.
+- **Tech:** TypeScript, Cloudflare Workers, Cloudflare Durable Objects, Vanilla JS, WebSockets.
+- **Deployed:** Cloudflare Workers + Durable Objects · [cuffthebluff.endra.in](https://cuffthebluff.endra.in)
+
+---
+
+### [Splendor – Multiplayer Board Game](/projects/personal/splendor/)
+**Jun 2026**
+
+A **full digital implementation of the Splendor board game** for 2–12 players with bot AI, in-game chat, and procedural UI.
+
+- Complete Splendor rules: gem token economy, card purchases, noble auto-claim, prestige scoring, tie-breaking.
+- Scales to 12 players using a double card set (180 cards, 15 nobles).
+- **Procedural SVG card art** and Web Audio sound effects — zero external assets.
+- Real-time **in-game chat** with 100-message history, auto-bot fallback on disconnect.
+- **Tech:** TypeScript, Cloudflare Workers, Cloudflare Durable Objects, Vanilla JS, WebSockets.
+- **Deployed:** Cloudflare Workers + Durable Objects.
+
+---
+
 ### [Notes App](/projects/personal/notes-app/)
 **Aug 2024**
 

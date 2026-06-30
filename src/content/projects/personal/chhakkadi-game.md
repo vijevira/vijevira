@@ -148,6 +148,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 ### Production URLs
 - Frontend: https://chhakkadi.endra.in
 - Backend API: https://api-chakkaddi.endra.in
+- Cloudflare Worker: https://api.chhakkadi.endra.in
 
 ### GitHub
 - [github.com/vijevira/Chhakkadi](https://github.com/vijevira/Chhakkadi)

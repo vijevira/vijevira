@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#2d1b69"/>
+    </linearGradient>
+    <linearGradient id="diceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+
+  <!-- Dice 1 (large, center-left) -->
+  <rect x="60" y="90" width="110" height="110" rx="18" fill="url(#diceGrad)" opacity="0.95"/>
+  <circle cx="95" cy="125" r="9" fill="white"/>
+  <circle cx="130" cy="125" r="9" fill="white"/>
+  <circle cx="95" cy="145" r="9" fill="white"/>
+  <circle cx="130" cy="145" r="9" fill="white"/>
+  <circle cx="95" cy="165" r="9" fill="white"/>
+  <circle cx="130" cy="165" r="9" fill="white"/>
+
+  <!-- Dice 2 (large, center-right) -->
+  <rect x="230" y="90" width="110" height="110" rx="18" fill="url(#diceGrad)" opacity="0.95"/>
+  <circle cx="265" cy="125" r="9" fill="white"/>
+  <circle cx="300" cy="125" r="9" fill="white"/>
+  <circle cx="282" cy="145" r="9" fill="white"/>
+  <circle cx="265" cy="165" r="9" fill="white"/>
+  <circle cx="300" cy="165" r="9" fill="white"/>
+
+  <!-- Dice 3 (small, top center, slightly rotated) -->
+  <g transform="rotate(-12, 200, 60)">
+    <rect x="162" y="30" width="76" height="76" rx="13" fill="#8b5cf6" opacity="0.7"/>
+    <circle cx="186" cy="54" r="6" fill="white"/>
+    <circle cx="214" cy="54" r="6" fill="white"/>
+    <circle cx="200" cy="68" r="6" fill="white"/>
+    <circle cx="186" cy="82" r="6" fill="white"/>
+    <circle cx="214" cy="82" r="6" fill="white"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="200" y="232" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white" letter-spacing="1">Cuff the Bluff</text>
+  <text x="200" y="258" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#c4b5fd" letter-spacing="2">MULTIPLAYER DICE BLUFFING</text>
+</svg>
