@@ -142,7 +142,7 @@ Refresh the page and your session token automatically rejoins the active game wi
 ## 🌐 Deployment
 
 - **Hosting:** Cloudflare Workers + Durable Objects (globally distributed edge)
-- **GitHub:** [github.com/vijevira/carbo-card-game](https://github.com/vijevira/carbo-card-game)
+- **GitHub:** [github.com/vijevira/cabo-card-game](https://github.com/vijevira/cabo-card-game)
 - Live at: https://cabo.endra.in
 
 ---
