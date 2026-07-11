@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2818"/>
+      <stop offset="100%" style="stop-color:#1a3d28"/>
+    </linearGradient>
+    <linearGradient id="cardWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="cardRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#fee2e2"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="4" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Felt background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Subtle felt texture lines -->
+  <rect width="400" height="300" fill="none" stroke="#1f4d30" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Card 1 — back (leftmost, slight rotation) -->
+  <g transform="rotate(-15, 100, 150)" filter="url(#shadow)">
+    <rect x="55" y="100" width="70" height="100" rx="8" fill="#1e3a5f"/>
+    <rect x="60" y="105" width="60" height="90" rx="6" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+    <text x="85" y="158" text-anchor="middle" font-size="22" fill="#60a5fa" opacity="0.7">🂠</text>
+  </g>
+
+  <!-- Card 2 — red suit (center-left, slight rotation) -->
+  <g transform="rotate(-5, 155, 148)" filter="url(#shadow)">
+    <rect x="110" y="98" width="70" height="100" rx="8" fill="url(#cardRed)"/>
+    <text x="121" y="116" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#dc2626">7</text>
+    <text x="127" y="128" font-family="Georgia, serif" font-size="12" fill="#dc2626">♥</text>
+    <text x="175" y="194" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#dc2626" transform="rotate(180, 175, 190)">7</text>
+    <text x="169" y="182" font-family="Georgia, serif" font-size="12" fill="#dc2626" transform="rotate(180, 169, 178)">♥</text>
+    <text x="145" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#dc2626">♥</text>
+  </g>
+
+  <!-- Card 3 — black suit (center, front) -->
+  <g transform="rotate(5, 215, 148)" filter="url(#shadow)">
+    <rect x="170" y="95" width="72" height="104" rx="8" fill="url(#cardWhite)"/>
+    <text x="181" y="114" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#1e293b">K</text>
+    <text x="181" y="126" font-family="Georgia, serif" font-size="12" fill="#1e293b">♠</text>
+    <text x="241" y="193" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#1e293b" transform="rotate(180, 241, 189)">K</text>
+    <text x="235" y="181" font-family="Georgia, serif" font-size="12" fill="#1e293b" transform="rotate(180, 235, 177)">♠</text>
+    <text x="206" y="153" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#1e293b">♠</text>
+  </g>
+
+  <!-- Card 4 — Joker (rightmost, slight rotation) -->
+  <g transform="rotate(12, 270, 148)" filter="url(#shadow)">
+    <rect x="235" y="98" width="70" height="100" rx="8" fill="#fefce8"/>
+    <text x="246" y="116" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#ca8a04">Jo</text>
+    <text x="246" y="128" font-family="Georgia, serif" font-size="12" fill="#ca8a04">★</text>
+    <text x="270" y="158" text-anchor="middle" font-size="26">🃟</text>
+    <text x="270" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#ca8a04">0 pts</text>
+  </g>
+
+  <!-- Title -->
+  <text x="200" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#f0fdf4" letter-spacing="4">CABO</text>
+  <text x="200" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6ee7b7" letter-spacing="3">MULTIPLAYER CARD GAME</text>
+</svg>

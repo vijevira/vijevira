@@ -1,7 +1,7 @@
 ---
 title: "All Projects"
 description: "Backend development experience on SEPA, QCBIP, UAERT, NACH, SWIFT, and SCRT1 payment systems with focus on real-time payments, compliance, and scalability."
-pubDate: "June 30 2026"
+pubDate: "July 11 2026"
 heroImage: "/projects-placeholder-about.jpg"
 ---
 
@@ -180,6 +180,19 @@ A **full digital implementation of the Splendor board game** for 2–12 players 
 - Real-time **in-game chat** with 100-message history, auto-bot fallback on disconnect.
 - **Tech:** TypeScript, Cloudflare Workers, Cloudflare Durable Objects, Vanilla JS, WebSockets.
 - **Deployed:** Cloudflare Workers + Durable Objects.
+
+---
+
+### [Cabo – Multiplayer Card Game](/projects/personal/cabo-card-game/)
+**Jul 2026**
+
+A **real-time multiplayer Cabo card game** for 2–15 players with bot AI, built on Cloudflare's edge infrastructure.
+
+- Low-score card game with elimination: reach 200 points and you're out. Call "Show!" to end the round — miscall it and take a 50-point penalty.
+- Multi-discard support (same-rank cards played at once), deck scaling by player count (1–4 decks), 25-second reconnect grace period.
+- **Bot AI** that discards expensive groups and calls Show when hand value drops to ≤5 pts.
+- **Tech:** TypeScript, Cloudflare Workers, Cloudflare Durable Objects, Vanilla JS, WebSockets.
+- **Deployed:** Cloudflare Workers + Durable Objects · [cabo.endra.in](https://cabo.endra.in)
 
 ---
 
