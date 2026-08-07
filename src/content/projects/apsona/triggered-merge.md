@@ -1,8 +1,8 @@
 ---
 title: "Apsona Triggered Merge"
-description: "The Triggered Merge is one of the most powerful automation features in Apsona for Salesforce. It allows users to automatically generate documents (such as PDFs, Word documents, or Excel files) and send emails based on changes in Salesforce records (like an opportunity closing or a case being created)."
+description: "End-to-end automation that triggers document generation from Salesforce record changes — spanning Apex triggers, platform events, AWS Lambda, license checks, merge execution, result delivery, and internal monitoring."
 pubDate: "2026-04-01"
-tags: ["Salesforce", "Apex", "Apsona", "Integration", "SOAP API", "Node.js", "Queueable"]
+tags: ["Salesforce", "Apex", "Apsona", "AWS Lambda", "AWS API Gateway", "Platform Events", "Node.js", "Queueable", "Custom Settings", "LWC"]
 heroImage: "/apsona.png"
 ---
 
@@ -10,88 +10,182 @@ heroImage: "/apsona.png"
 
 ## 📌 Overview
 
-The Triggered Merge is one of the most powerful automation features in Apsona for Salesforce. It enables users to automatically generate documents (such as PDFs, Word documents, or Excel files) and send emails based on changes in Salesforce records, such as an opportunity closing or a case being created. This system captures record updates in Salesforce, processes them asynchronously through a series of backend services, and merges data into predefined templates for seamless document generation and delivery.
+Triggered Merge is one of Apsona's most powerful automation features. It allows Salesforce users to automatically generate documents (PDFs, Word, Excel) and send them via email whenever a record change occurs — an opportunity closing, a case being created, a contract being signed.
 
-As the lead developer, I was responsible for the end-to-end development and deployment of this integration from scratch, ensuring robust, scalable, and secure automation that handles high-volume data processing while adhering to Salesforce limits and best practices.
+I built this feature **end-to-end from scratch**: from the Salesforce-side configuration (flows, triggers, platform events, custom objects) through the AWS integration layer (API Gateway, Lambda, license validation) to the merge execution, result delivery, and an internal monitoring dashboard for the Apsona team.
+
+---
+
+## 🔁 End-to-End Flow
+
+```
+Salesforce Record Change
+        ↓
+  Triggered Flow (Flow Builder)
+        ↓
+  Platform Event Published
+        ↓
+  Apex Trigger fires → Apex Classes
+        ↓
+  Payload built (recordId, orgId, userId, mergeActionId)
+        ↓
+  Queueable Apex → HTTP POST to AWS API Gateway (JWT + HMAC signed)
+        ↓
+  Lambda Function
+  ├── Validates HMAC + JWT
+  ├── License & quota check (Gatekeeper Service)
+  └── Queues merge job (RabbitMQ)
+        ↓
+  Action Service (Node.js)
+  ├── Connects to Salesforce via jsforce
+  ├── Executes merge with template
+  ├── Retry logic (up to 3 attempts)
+  └── Sends result back to Salesforce
+        ↓
+  Result written to Custom Objects (Event Logs + Run Results)
+  + Email/notification delivery
+```
+
+---
 
 ## 🚀 Features
 
-### Core Capabilities
-- **Automated Merges:** Trigger-based execution on record updates or creation, enabling real-time document generation.
-- **Payload Serialization:** Converts Salesforce data into JSON payloads for efficient asynchronous processing by Apsona's inbound event manager.
-- **Exception Handling Framework:** Standardized error handling through custom classes to prevent limits from crashing background threads.
-- **Limit Safeguards:** Incorporates bypass mechanisms, such as using `targetObjectId` instead of external email addresses, to avoid hitting Salesforce's single-email limits.
-- **Batch Processing:** Handles merge actions in batches of 100 records for optimal performance and limit management.
-- **Authentication & Security:** Implements JWT and HMAC for secure API communications between Salesforce and AWS services.
-- **Comprehensive Logging:** Detailed event logging for debugging, including request receipt, authentication status, quota validation, and merge outcomes.
-- **Backend Dashboard:** Real-time monitoring of job statuses, service health, usage analytics, and error rates.
+### Salesforce Integration
+- **Triggered Flow → Platform Event:** Record changes in Salesforce fire a flow that publishes a platform event, decoupling the trigger from the processing logic.
+- **Apex Trigger + Classes:** Platform event trigger invokes Apex classes that build a structured JSON payload (record IDs, org ID, username, merge action ID) and enqueue a Queueable job.
+- **Queueable Apex:** Asynchronous execution avoids governor limit violations. Sends a signed HTTP request to AWS API Gateway in batches of up to 100 records per job.
+- **JWT + HMAC Authentication:** Every outbound request is signed at the Apex layer, validated at the Lambda layer — no unauthenticated calls reach the backend.
 
-## 👨‍💻 My Role and Responsibilities
+### Custom Objects — Event Logs & Run Results
+- **Event Logs:** Track each step of the triggered merge pipeline — request receipt, authentication, license validation, merge progress, and final outcome (success/failure with reason).
+- **Run Results:** Store the output of each merge execution — document generated, delivery status, duration, retry count.
+- Both objects live in the **client org**, giving users full visibility into their merge activity without leaving Salesforce.
 
-I led the full development lifecycle of this integration, from initial design to production deployment. My efforts included:
+### Custom Settings — Environment Configuration
+- Custom settings control behavior per environment (production, sandbox, developer edition) without code changes.
+- Configurable flags for: endpoint URLs, feature toggles, bypass options for sandbox testing, and logging verbosity.
+- Used to work around environment-specific limits (e.g. Salesforce single-email limits in Developer Editions) without branching code paths.
+- Proper error handling propagates from Salesforce configuration errors (missing custom setting values, invalid configurations) all the way through backend service failures — each layer logs a structured reason code to the Event Log object.
 
-### Salesforce Development
-- **Platform Event Creation:** Designed and implemented Salesforce platform events to capture record changes.
-- **Apex Triggers and Flows:** Developed Apex triggers integrated with Salesforce flows to initiate merge processes.
-- **Payload Creation:** Built logic to serialize record IDs, orgId, username, and merge action IDs into structured payloads.
-- **Queueable Apex Jobs:** Implemented asynchronous Queueable processes to send secure requests (with JWT and HMAC) to AWS API Gateway in batches of 100.
+### Replay Mechanism
+- If a merge job fails at any stage (transient network error, Salesforce timeout, merge service unavailability), the system can replay the job from its last known checkpoint using the stored Event Log data.
+- Replay is triggerable manually from the Salesforce UI or automatically on retry threshold breach.
+- Prevents data loss and avoids re-triggering the full Apex flow for transient failures.
 
-### Backend Services
-- **API Gateway Configuration:** Set up AWS API Gateway to invoke Lambda functions securely.
-- **Lambda Function Development:** Created serverless functions for request validation using both HMAC and JWT, job status management, and queue messaging for quota and license checks.
-- **Gatekeeper Service:** Developed a validation service to check user licenses and quotas before processing merge actions, updating job statuses accordingly.
-- **Action Service:** Built the core processing service that connects to Salesforce via jsforce, performs merges, implements retry logic (up to 3 attempts), and handles failures gracefully.
+### Non-Operational Check (Health Verification)
+- A **button-click dry-run** feature lets internal teams and admins verify the entire triggered merge pipeline is working without generating a real document.
+- Clicking the button fires a test payload through the full stack — Apex → Lambda → Action Service — and returns a pass/fail verdict.
+- On completion, results are sent via **email and Slack notification** to the internal team, making it easy to catch regressions after deployments or config changes without monitoring logs manually.
 
-### Logging and Monitoring
-- **Custom Event Logging:** Implemented comprehensive log handling using custom Salesforce objects to track events such as request receipt, authentication success/failure, quota validation results, document generation progress, and merge completion or failure with detailed reasons.
-- **Backend Dashboard:** Designed and developed a monitoring dashboard to track job details, service health, queued/completed/failed job summaries, top clients by usage, error rates by module, and LMO API usages. Included a one-click dry run feature for testing.
+---
 
-### Infrastructure and Deployment
-- **End-to-End Deployment:** Managed deployment across AWS services, including ECS containers, CloudWatch for monitoring, Bitbucket pipelines for CI/CD, and RDS for data persistence.
-- **Security and Configuration:** Integrated HashiCorp Vault for secrets management, EventBridge for event-driven architecture, and Redis/RabbitMQ for queuing and caching.
+## 🗑️ Scheduled Apex — Storage Cleanup
+
+To keep client org storage safe over time, I developed a **configurable Scheduled Apex class** that periodically deletes old Event Logs and Run Results records.
+
+### Configuration Options
+The cleanup job is fully configurable via custom objects in the Apsona namespace — no code changes required:
+
+| Option | Description |
+|---|---|
+| **Target Object** | Select which Apsona namespace object(s) to clean up (Event Logs, Run Results, or others) |
+| **Retention Period** | Number of days to retain records before deletion (e.g. keep last 30 days) |
+| **Filter Logic** | Add custom SOQL-style filter conditions to restrict which records get deleted |
+| **Delete Attachments** | Toggle: delete associated file attachments alongside records, or leave them |
+| **Email Notifications** | On completion, send a summary email listing records deleted, any errors, and storage freed |
+| **Schedule** | Configurable cron expression for how frequently the job runs |
+
+### Design Notes
+- Configurable with **any custom object in the Apsona namespace** — not hardcoded to Event Logs alone. Future objects can be enrolled without code changes.
+- Runs as a Schedulable Apex class; can be configured and triggered from the Apsona admin UI.
+- Handles bulk deletion within Salesforce DML limits using chunked batch processing.
+- Failure in one chunk does not abort the full run — partial completion is logged and reported.
+
+---
+
+## 📊 Backend Dashboard (Internal)
+
+Built an **internal monitoring dashboard** for the Apsona engineering team to observe the health and usage of the triggered merge system in real time.
+
+### What It Shows
+- **Job Details:** Current queue depth, in-flight jobs, completed/failed job history with timestamps and org IDs.
+- **Failure Rate:** Per-module error breakdown — Lambda validation failures, Gatekeeper rejections, Action Service merge failures.
+- **LMO API Usage:** How much of the License Management Org API quota each client org is consuming — useful for catching runaway orgs and planning capacity.
+- **Top Clients by Volume:** Ranked view of highest-activity orgs, helping prioritize support and capacity decisions.
+- **Service Health:** Live status indicators for Lambda, Gatekeeper, Action Service, and RabbitMQ.
+
+### Access & Auth
+- Internal-only, not customer-facing.
+- Auth-gated for the Apsona engineering and support team.
+
+---
 
 ## 🛠️ Tech Stack
-- **Platform:** Salesforce Apex (SOAP API v66.0, Queueable Interface)
-- **Integration Layer:** Apsona Inbound Event Manager
-- **External Integration:** Postman/cURL for API testing and REST/SOAP debugging
-- **Error Handling:** Custom exception management classes
-- **Backend:** Node.js, PostgreSQL, AWS Lambda, AWS API Gateway, RabbitMQ, Redis, Express.js, HashiCorp Vault, EventBridge
-- **Deployment:** AWS (ECS, CloudWatch, RDS), Bitbucket Pipelines, Git Tagging
+
+### Salesforce (Client Org)
+- Apex (Triggers, Queueable, Schedulable, Classes)
+- Salesforce Flow (Flow Builder — trigger detection)
+- Platform Events
+- Custom Objects (Event Logs, Run Results, Cleanup Config)
+- Custom Settings (environment configuration)
+- LWC (button-click non-operational check UI)
+
+### AWS Integration Layer
+- AWS API Gateway (HTTPS entry point, request routing)
+- AWS Lambda (HMAC + JWT validation, license check, job queuing)
+- Amazon EventBridge
+- Amazon CloudWatch (logging and alerting)
+- AWS ECS (containerized Node.js services)
+- AWS RDS (PostgreSQL)
+
+### Backend Services (Node.js)
+- **Gatekeeper Service:** License and quota validation
+- **Action Service:** jsforce-based merge execution with retry logic (3 attempts)
+- **Inbound Event Manager:** Routes incoming events to appropriate queues
+- RabbitMQ (job queuing), Redis (caching)
+- HashiCorp Vault (secrets management)
+
+### Notifications
+- Email (merge results, cleanup summaries, non-op check outcomes)
+- Slack (non-operational check alerts, internal monitoring)
+
+### CI/CD & Deployment
+- Bitbucket Pipelines
+- Git tagging for version control and rollback
+- AWS ECS + CloudWatch
+
+---
 
 ## 🏗️ Architecture
 
-The architecture is designed for scalability, security, and fault tolerance:
+The system is designed for fault tolerance, auditability, and zero data loss:
 
-- **Event Generation:** Salesforce triggers or flows detect record changes and generate outbound payloads.
-- **Asynchronous Processing:** Queueable Apex jobs handle background execution, avoiding CPU timeouts and governor limits.
-- **Multi-Service Backend:**
-  - **API Gateway:** Entry point for secure invocations.
-  - **Lambda:** Validation and job queuing.
-  - **Gatekeeper:** License and quota enforcement.
-  - **Action Service:** Core merge processing with retries.
-- **Error Handling:** Standardized logging and exception conversion for clean failure reporting in Apex Jobs.
+- **Decoupled trigger layer:** Salesforce flows publish platform events; Apex triggers consume them — the flow author never calls Apex directly.
+- **Signed outbound requests:** JWT + HMAC ensures every request from Salesforce to AWS is authenticated and tamper-proof.
+- **Two-phase validation at Lambda:** HMAC checked first (reject fast if tampered), then license/quota check — expensive operations never run for invalid requests.
+- **Replay-safe event logs:** Every pipeline step writes to a Custom Object before proceeding — if the process fails mid-way, replay can resume from the last checkpoint rather than starting over.
+- **Storage-safe design:** Scheduled cleanup job prevents unbounded growth of Event Log and Run Result records in client orgs.
+- **Observability:** Internal dashboard + CloudWatch give two complementary views — business-level (jobs/orgs) and infra-level (service health/errors).
 
-## 🏗️ Development & Deployment Process
+---
 
-### Key Classes & Components
-- **`ErrorHandler.cls`:** Global utility for exception management and standardization.
-- **`ApsonaTriggerMergeServiceQA.cls`:** Queueable job class for safe asynchronous execution and error catching.
-- **Apex Triggers:** Event-driven triggers configured via Salesforce flows.
+## 🧪 Testing & Load Considerations
 
-### Deployment Strategy
-- Utilized Bitbucket pipelines for automated builds and deployments.
-- Leveraged AWS ECS for containerized services and CloudWatch for logging and monitoring.
-- Implemented Git tagging for version control and rollback capabilities.
+### Environment Isolation via Custom Settings
+- Custom settings allow switching between endpoint environments (dev, staging, prod) without code changes.
+- Bypass flags in custom settings prevent hitting Salesforce email limits during sandbox testing.
 
-## 🧪 Load Testing & Challenges
+### Salesforce Governor Limits
+- `SINGLE_EMAIL_LIMIT_EXCEEDED` in Developer Editions — bypassed using `targetObjectId` instead of external email addresses, controlled via custom setting flag.
+- Batch size capped at 100 per Queueable job to stay within heap and CPU limits.
+- Bulk delete in cleanup job runs in chunked batches to respect DML row limits.
 
-### Handling Salesforce Limits
-During load testing in Developer Editions, I encountered and resolved the `SINGLE_EMAIL_LIMIT_EXCEEDED` error (capped at 15 external emails/day). Key learnings:
-- **Limit Metrics:** Bounced emails deduct from the limit post-delivery.
-- **Bypass Techniques:** Used custom settings for internal users for environment switch.
-- **Batch Optimization:** Processed records in batches to manage API call limits effectively.
+---
 
 ## 📎 References
+
 - [Apsona Triggered Merge](https://apsona.com/trigger-merge)
 - [Apsona Triggered Merge Documentation](https://www.apsona.com/docs/help-and-support/trigger-merge/)
+- [Salesforce Platform Events](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/)
+- [Salesforce Queueable Apex](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
 - [Salesforce Developer Guide](https://developer.salesforce.com/)
