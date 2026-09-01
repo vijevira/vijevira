@@ -1,62 +1,145 @@
 ---
 import Layout from '../layouts/ProjectsPost.astro';
+import { SITE_URL, PERSON_ID } from '../consts';
+
+// References the Person node published on the homepage rather than
+// duplicating it here.
+const aboutPageLd = {
+	'@context': 'https://schema.org',
+	'@type': 'AboutPage',
+	url: `${SITE_URL}/about`,
+	name: 'About Me',
+	mainEntity: { '@id': PERSON_ID },
+};
 ---
 
 <Layout
 	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/projects-placeholder-about.jpg"
+	description="Vijendra Kumar (Vijevira) is a Senior Software Engineer at Apsona based in Bangalore, India, working on backend systems, AI, and payment infrastructure."
+	pubDate={new Date('June 22 2025')}
+	updatedDate={new Date('September 1 2026')}
+	heroImage="/profile.png"
+	avatarImage={true}
+	structuredData={aboutPageLd}
 >
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+		Hi, I'm <strong>Vijendra Kumar</strong> — online you'll usually find me as <strong
+			>Vijevira</strong
+		>. I'm a Senior Software Engineer based in Bangalore, India, and this is the fuller story
+		behind the projects and resume on this site.
 	</p>
 
+	<h3>Where I started</h3>
 	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
+		I grew up in Bihar and later moved to Bangalore, where I live and work today. I studied
+		<strong>Computer Science and Engineering</strong> at the University Institute of Technology,
+		The University of Burdwan, graduating with an <strong>8.38 CGPA</strong>. Before that, I
+		scored <strong>84.2%</strong> in 12th grade at Delhi Public School, Varanasi, and a <strong
+			>9.8 CGPA</strong
+		> in 10th grade at Jawahar Navodaya Vidyalaya.
 	</p>
 
+	<h3>My work journey</h3>
 	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+		My career began at <strong>Tata Consultancy Services (TCS)</strong> (Oct 2021 – Aug 2022),
+		where I worked on frontend development — HTML, CSS, JavaScript, Angular, and Java — building
+		reusable UI components and input validation systems for enterprise-scale web applications.
+	</p>
+	<p>
+		I then joined <strong>Pratishthan Software Ventures</strong> (Sep 2022 – Aug 2024), engineering
+		mission-critical payment infrastructure for banks: <strong>SEPA</strong> (Single Euro Payments
+		Area), <strong>QCBIP</strong> (Qatar Central Bank Instant Payments), <strong>UAERT</strong>
+		(UAE Real-Time Transfers), and <strong>SWIFT</strong> messaging flows. I built real-time
+		payment flows, return/reject cycles, and SLA tracking mechanisms to meet strict regulatory
+		standards, enhanced systems integrated with <strong>NACH</strong> and <strong>NPCI</strong>,
+		and worked across the stack — securing API integrations, handling Kafka-based event streams,
+		and ensuring compliance with <strong>ISO 20022</strong>.
+	</p>
+	<p>
+		Today I'm a <strong>Senior Software Engineer at Apsona</strong>, where my work centers on
+		<strong>backend engineering, AI systems, payment integrations, and system architecture</strong
+		>. I built <strong>apsona_nexus_svc</strong>, a secure Node.js service that provides REST APIs
+		to interact with <strong>HashiCorp Vault</strong> for credential management, led the
+		org-wide <strong>clear cache system</strong>, designed the <strong
+			>Merge button for Salesforce Lightning List View</strong
+		>, built <strong>PDF storage uploads to client orgs</strong>, and helped split a legacy
+		monorepo into scoped services like PDF SVC and SFDC SVC. Along the way I upgraded services from
+		Node.js v8 to v18 and automated <strong>Excel merge operations via schedulers</strong>. The
+		full year-by-year breakdown is on my <a href="/resume">resume</a>, and you can see this focus
+		in practice on the <a href="/projects">projects</a> page.
+	</p>
+	<p>
+		Alongside my full-time roles, I've also taken on freelance work as an <strong
+			>AI Prompt Engineer at Alignerr</strong
+		> and an <strong>AI Trainer at Outlier</strong>, exploring applied AI/ML through prompt
+		refinement and model training on real-world data.
 	</p>
 
+	<h3>Tech stack &amp; skills</h3>
+	<ul>
+		<li><strong>Languages:</strong> Python, JavaScript, TypeScript, Node.js, Java, HTML, CSS</li>
+		<li><strong>Frameworks:</strong> Angular, Loopback, Oe-Cloud, Node-RED</li>
+		<li><strong>Databases:</strong> PostgreSQL</li>
+		<li><strong>Dev Tools:</strong> Docker, Postman, RabbitMQ, GitHub</li>
+		<li><strong>CS Fundamentals:</strong> Data Structures, Operating Systems, DBMS</li>
+	</ul>
 	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
+		I've solved <strong>350+ coding problems</strong>, maintain <strong
+			>25+ public repositories on GitHub</strong
+		>, and constantly experiment with open-source and side projects.
 	</p>
 
+	<h3>Certifications</h3>
+	<ul>
+		<li><strong>CutShort Certified</strong> – Python (Advanced) &amp; JavaScript (Advanced)</li>
+		<li><strong>Udemy:</strong> Python (2019)</li>
+		<li><strong>Coursera:</strong> Python Data Structures (2019), Algorithm Toolbox (2019)</li>
+		<li><strong>edX:</strong> Object-Oriented Programming in Java (2019)</li>
+		<li><strong>PM YUVA Yojana:</strong> Entrepreneurship (2018)</li>
+		<li><strong>InfyTQ:</strong> Infosys Certified Software Programmer (2020)</li>
+	</ul>
+
+	<h3>Achievements</h3>
+	<ul>
+		<li>Global Rank <strong>690</strong> – <em>Facebook Hacker Cup</em></li>
+		<li>Global Rank <strong>1899</strong> – <em>TCS CodeVita</em></li>
+		<li>Round 3 – <em>CodeChef SnackDown</em></li>
+	</ul>
+
+	<h3>How I work</h3>
 	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+		I care more about clean, thoughtful engineering than quick hacks — writing code that's easy for
+		the next person (often future me) to reason about, testing it properly, and documenting
+		decisions so they don't get lost. I like working with people who are equally curious, and I'm
+		always looking for the next thing worth learning, whether that's a new part of the stack or an
+		unfamiliar problem space like applied AI.
+	</p>
+
+	<h3>Outside of work</h3>
+	<p>
+		When I'm not writing code, I'm usually solving puzzles or playing chess — though most of that
+		same energy ends up going into personal projects. I like building real-time multiplayer games
+		on Cloudflare Workers and Durable Objects, complete with bot AI so they're playable solo: <a
+			href="/projects/personal/cabo-card-game">Cabo</a
+		> (2–15 players), <a href="/projects/personal/cuff-the-bluff">Cuff the Bluff</a> (a Liar's Dice
+		game for up to 15 players), <a href="/projects/personal/splendor">Splendor</a> (a digital take
+		on the board game for 2–12 players), and <a href="/projects/personal/chhakkadi-game"
+			>Chhakkadi</a
+		> (a platform for three Indian card games — Chhakkadi, Dehla Pakad, and Call Break).
+	</p>
+	<p>
+		I've also built a couple of full SaaS products end-to-end: <a href="/projects/personal/zyvora"
+			>Zyvora</a
+		>, a Jira-like project management platform with Kanban boards and real-time collaboration, and
+		<a href="/projects/personal/watchtower">WatchTower</a>, a platform that monitors websites, RSS
+		feeds, and APIs and pushes notifications to Discord, Slack, and Telegram — plus smaller tools
+		like a <a href="/projects/personal/notes-app">Notes App</a>. You can browse all of them on the
+		<a href="/projects">projects</a> page.
+	</p>
+
+	<h3>Let's connect</h3>
+	<p>
+		I'm always open to interesting conversations, collaborations, or opportunities. You can reach
+		me by email or find my other profiles in the footer below.
 	</p>
 </Layout>

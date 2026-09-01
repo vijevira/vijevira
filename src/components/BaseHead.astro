@@ -2,16 +2,25 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import { SITE_NAME, TWITTER_HANDLE } from '../consts';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	noindex?: boolean;
+	structuredData?: object | object[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/pratishthan.webp' } = Astro.props;
+const { title, description, image = '/logo.png', noindex = false, structuredData } = Astro.props;
+
+const jsonLdBlocks = structuredData
+	? Array.isArray(structuredData)
+		? structuredData
+		: [structuredData]
+	: [];
 ---
 
 <!-- Global Metadata -->
@@ -32,32 +41,15 @@ const { title, description, image = '/pratishthan.webp' } = Astro.props;
 <meta name="apple-mobile-web-app-title" content="vijevira" />
 <link rel="manifest" href="/site.webmanifest" />
 
-
-<!-- SEO Metadata -->
-<title>Vijendra Kumar – Software Engineer | Backend Specialist | AI & Web Developer</title>
-<meta name="title" content="Vijendra Kumar – Software Engineer | Backend Specialist | AI & Web Developer" />
-<meta name="description" content="I'm a highly versatile Software Engineer with a strong foundation in backend technologies, AI systems, payment integrations, and modern web technologies." />
-<meta name="keywords" content="Vijendra Kumar, vijevira, vijevirat, software engineer India, Kumar Vijendra Singh, Vijendra Kumar Software Engineer, Vijemdra Kumar TCS, Vijendra Kumar Apsona, Vijendra Kumar Pratishthan, Vijendra Backend Developer, Vijendra Node.js, Vijendra Python developer, Webflow developer, AI prompt engineer, Vijendra Kumar Portfolio, vijendra payment systems engineer, open source contributor, tech blog India" />
-<meta name="robots" content="index, follow" />
+<!-- Site-wide SEO Metadata -->
+<meta name="keywords" content="Vijendra Kumar, vijevira, vijevirat, software engineer India, Kumar Vijendra Singh, Vijendra Kumar Software Engineer, Vijendra Kumar TCS, Vijendra Kumar Apsona, Vijendra Kumar Pratishthan, Vijendra Backend Developer, Vijendra Node.js, Vijendra Python developer, Webflow developer, AI prompt engineer, Vijendra Kumar Portfolio, vijendra payment systems engineer, open source contributor, tech blog India" />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 <meta name="language" content="English" />
 <meta name="revisit-after" content="7 days" />
-<meta name="author" content="Vijendra Kumar" />
-
-<!-- Open Graph / Social Sharing -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Vijendra Kumar – Senior Software Engineer" />
-<meta property="og:description" content="Explore the portfolio, projects, blogs, and certifications of Vijendra Kumar, a developer passionate about backend systems, AI, and design." />
-<meta property="og:image" content="https://vijevira.in/social-preview.jpg" />
-<meta property="og:url" content="https://vijevira.in" />
-<meta property="og:site_name" content="Vijendra Kumar" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Vijendra Kumar – Senior Software Engineer" />
-<meta name="twitter:description" content="Explore the portfolio, projects, blogs, and certifications of Vijendra Kumar, a developer passionate about backend systems, AI, and design." />
-<meta name="twitter:image" content="https://vijevira.in/social-preview.jpg" />
-<meta name="twitter:creator" content="@vijevirat" />
-<meta name="twitter:site" content="@vijevirat" />
+<meta name="author" content={SITE_NAME} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta name="twitter:creator" content={TWITTER_HANDLE} />
+<meta name="twitter:site" content={TWITTER_HANDLE} />
 
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -84,3 +76,6 @@ const { title, description, image = '/pratishthan.webp' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Structured Data (JSON-LD) -->
+{jsonLdBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}

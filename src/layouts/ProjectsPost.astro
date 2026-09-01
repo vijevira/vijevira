@@ -4,15 +4,36 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { SITE_NAME } from '../consts';
 
-type Props = CollectionEntry<'projects'>['data'];
+type Props = CollectionEntry<'projects'>['data'] & {
+	noindex?: boolean;
+	structuredData?: object | object[];
+	avatarImage?: boolean;
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	noindex,
+	structuredData,
+	avatarImage = false,
+} = Astro.props;
+const pageTitle = `${title} – ${SITE_NAME}`;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead
+			title={pageTitle}
+			description={description}
+			image={heroImage}
+			noindex={noindex}
+			structuredData={structuredData}
+		/>
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -28,12 +49,41 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
+			.hero-image.avatar {
+				display: flex;
+				justify-content: center;
+				padding-top: 1em;
+			}
+			.hero-image.avatar img {
+				width: 220px;
+				height: 220px;
+				max-width: 220px;
+				object-fit: cover;
+				border-radius: 50%;
+			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
+			}
+			.prose :global(p) {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+			.prose :global(h1),
+			.prose :global(h2),
+			.prose :global(h3),
+			.prose :global(h4) {
+				margin-top: 1em;
+				margin-bottom: 0.4em;
+			}
+			.prose :global(h1:first-child),
+			.prose :global(h2:first-child),
+			.prose :global(h3:first-child),
+			.prose :global(h4:first-child) {
+				margin-top: 0;
 			}
 			.title {
 				margin-bottom: 1em;
@@ -58,8 +108,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+				<div class={avatarImage ? 'hero-image avatar' : 'hero-image'}>
+					{heroImage && (
+						<img
+							width={avatarImage ? 220 : 1020}
+							height={avatarImage ? 220 : 510}
+							src={heroImage}
+							alt={title}
+						/>
+					)}
 				</div>
 				<div class="prose">
 					<div class="title">

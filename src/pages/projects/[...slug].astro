@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import ProjectsPost from '../../layouts/ProjectsPost.astro';
 import { render } from 'astro:content';
+import { PERSON_ID, WEBSITE_ID } from '../../consts';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('projects');
@@ -14,8 +15,27 @@ type Props = CollectionEntry<'projects'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// References the Person node published on the homepage rather than
+// duplicating it here.
+const creativeWorkLd = {
+	'@context': 'https://schema.org',
+	'@type': 'CreativeWork',
+	headline: post.data.title,
+	description: post.data.description,
+	url: pageUrl,
+	...(post.data.heroImage && {
+		image: new URL(post.data.heroImage, Astro.site).toString(),
+	}),
+	datePublished: post.data.pubDate.toISOString(),
+	dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+	author: { '@id': PERSON_ID },
+	isPartOf: { '@id': WEBSITE_ID },
+};
 ---
 
-<ProjectsPost {...post.data}>
+<ProjectsPost {...post.data} structuredData={creativeWorkLd}>
 	<Content />
 </ProjectsPost>

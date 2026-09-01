@@ -2,19 +2,35 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_URL, PERSON_ID, WEBSITE_ID } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('projects')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const pageTitle = 'Projects – Vijendra Kumar (Vijevira)';
+const pageDescription =
+	'Backend engineering, AI systems, payment integration, and DevOps projects built by Vijendra Kumar (Vijevira), including SEPA, SWIFT, and NACH payment systems.';
+
+// References the Person/WebSite nodes published on the homepage rather
+// than duplicating them here.
+const collectionPageLd = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	url: `${SITE_URL}/projects`,
+	name: pageTitle,
+	description: pageDescription,
+	author: { '@id': PERSON_ID },
+	isPartOf: { '@id': WEBSITE_ID },
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={pageTitle} description={pageDescription} structuredData={collectionPageLd} />
 		<style>
 			main {
 				width: 960px;
