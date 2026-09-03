@@ -9,7 +9,7 @@ export const TWITTER_HANDLE = "@vijevirat";
 export const SITE_TITLE =
   "Vijendra Kumar – Software Engineer | Backend Specialist | AI & Web Developer";
 export const SITE_DESCRIPTION =
-  "I'm a highly versatile Software Engineer with a strong foundation in backend technologies, AI systems, payment integrations, and modern web technologies.";
+  "I'm a Senior Software Engineer at Apsona, based in Bangalore, India, working on backend engineering, Salesforce automation, and AI-assisted tooling — with prior experience building real-time payment infrastructure for banks.";
 
 // Stable entity ids referenced from JSON-LD across pages instead of
 // duplicating the Person/WebSite nodes on every page.
