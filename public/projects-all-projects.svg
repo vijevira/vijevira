@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#050a24"/>
-      <stop offset="100%" style="stop-color:#12208f"/>
+      <stop offset="0%" style="stop-color:#1c1512"/>
+      <stop offset="100%" style="stop-color:#423934"/>
     </linearGradient>
     <linearGradient id="tile1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2337ff"/>
-      <stop offset="100%" style="stop-color:#000d8a"/>
+      <stop offset="0%" style="stop-color:#caa472"/>
+      <stop offset="100%" style="stop-color:#8a5a2b"/>
     </linearGradient>
     <linearGradient id="tile2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#5b6cff"/>
-      <stop offset="100%" style="stop-color:#2337ff"/>
+      <stop offset="0%" style="stop-color:#e0b98a"/>
+      <stop offset="100%" style="stop-color:#a97142"/>
     </linearGradient>
     <filter id="shadow">
       <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.35"/>
@@ -43,5 +43,5 @@
 
   <!-- Title -->
   <text x="200" y="238" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="2">ALL PROJECTS</text>
-  <text x="200" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#a3b0ff" letter-spacing="3">PORTFOLIO OVERVIEW</text>
+  <text x="200" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#e0c9a6" letter-spacing="3">PORTFOLIO OVERVIEW</text>
 </svg>
