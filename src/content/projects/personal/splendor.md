@@ -6,8 +6,6 @@ tags: ["Cloudflare Workers", "Durable Objects", "WebSockets", "TypeScript", "Mul
 heroImage: "/projects-splendor.svg"
 ---
 
-# Splendor – Multiplayer Board Game
-
 ## 📌 Overview
 Splendor is a **digital implementation of the classic Splendor board game** — a Renaissance gem trading strategy game for 2–12 players. Players act as gem merchants collecting tokens, buying development cards, and attracting noble patrons to build the most prestigious trading empire.
 

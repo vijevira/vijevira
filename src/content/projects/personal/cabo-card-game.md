@@ -6,8 +6,6 @@ tags: ["Cloudflare Workers", "Durable Objects", "WebSockets", "TypeScript", "Mul
 heroImage: "/projects-cabo.svg"
 ---
 
-# Cabo – Multiplayer Card Game
-
 ## 📌 Overview
 Cabo is a **real-time multiplayer card game** for 2–15 players. The goal is simple: keep your score low and be the last player standing. Declare "Show!" when you think you have the lowest hand — but call it wrong and you pay a 50-point penalty.
 

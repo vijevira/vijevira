@@ -6,8 +6,6 @@ tags: ["React", "TypeScript", "Node.js", "Express", "Socket.IO", "PostgreSQL", "
 heroImage: "/project-zyvora.png"
 ---
 
-# Zyvora – SaaS Task Management Platform
-
 ## 📌 Overview
 Zyvora is a **full-featured SaaS project management platform** — a Jira-like tool built from scratch with enterprise-grade architecture. It supports multi-tenant workspaces with role-based access control, rich task hierarchies, multiple board views, and real-time collaboration.
 

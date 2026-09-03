@@ -6,8 +6,6 @@ tags: ["Salesforce", "Apex", "Apsona", "AWS Lambda", "AWS API Gateway", "Platfor
 heroImage: "/apsona.png"
 ---
 
-# Apsona Triggered Merge
-
 ## 📌 Overview
 
 Triggered Merge is one of Apsona's most powerful automation features. It allows Salesforce users to automatically generate documents (PDFs, Word, Excel) and send them via email whenever a record change occurs — an opportunity closing, a case being created, a contract being signed.

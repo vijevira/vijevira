@@ -1,0 +1,46 @@
+---
+// Auto-generated from the content collection so this list can never go
+// stale — a newly added project appears here immediately, even before
+// prose about it is written elsewhere on this page.
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('projects')).filter((post) => !post.data.pinned);
+
+const GROUP_LABELS: Record<string, string> = {
+	apsona: 'Apsona',
+	pratishthan: 'Pratishthan Software Ventures',
+	personal: 'Personal Projects',
+};
+const GROUP_ORDER = ['apsona', 'pratishthan', 'personal'];
+
+const groups = new Map<string, typeof posts>();
+for (const post of posts) {
+	const [folder] = post.id.split('/');
+	const key = GROUP_LABELS[folder] ? folder : 'other';
+	if (!groups.has(key)) groups.set(key, []);
+	groups.get(key)!.push(post);
+}
+const sortDate = (post: (typeof posts)[number]) =>
+	(post.data.updatedDate ?? post.data.pubDate).valueOf();
+
+for (const list of groups.values()) {
+	list.sort((a, b) => sortDate(b) - sortDate(a));
+}
+
+const orderedKeys = [...GROUP_ORDER.filter((k) => groups.has(k)), ...(groups.has('other') ? ['other'] : [])];
+---
+
+{
+	orderedKeys.map((key) => (
+		<>
+			<h3>{GROUP_LABELS[key] ?? 'Other'}</h3>
+			<ul>
+				{groups.get(key)!.map((post) => (
+					<li>
+						<a href={`/projects/${post.id}/`}>{post.data.title}</a> — {post.data.description}
+					</li>
+				))}
+			</ul>
+		</>
+	))
+}

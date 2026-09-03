@@ -6,9 +6,16 @@ import { SITE_URL, PERSON_ID, WEBSITE_ID } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('projects')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// Sort by whichever is more recent — an edited older project should rank
+// above an untouched newer one.
+const sortDate = (post: (typeof posts)[number]) =>
+	(post.data.updatedDate ?? post.data.pubDate).valueOf();
+
+const posts = (await getCollection('projects')).sort((a, b) => {
+	const pinDiff = Number(!!b.data.pinned) - Number(!!a.data.pinned);
+	if (pinDiff !== 0) return pinDiff;
+	return sortDate(b) - sortDate(a);
+});
 
 const pageTitle = 'Projects – Vijendra Kumar (Vijevira)';
 const pageDescription =
@@ -110,10 +117,15 @@ const collectionPageLd = {
 						posts.map((post) => (
 							<li>
 								<a href={`/projects/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img width={720} height={360} src={post.data.heroImage} alt={post.data.title} />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
+										{post.data.hidePubDate && 'Updated '}
+										<FormattedDate
+											date={post.data.hidePubDate
+												? (post.data.updatedDate ?? post.data.pubDate)
+												: post.data.pubDate}
+										/>
 									</p>
 								</a>
 							</li>

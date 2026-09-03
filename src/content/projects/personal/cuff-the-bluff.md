@@ -6,8 +6,6 @@ tags: ["Cloudflare Workers", "Durable Objects", "WebSockets", "TypeScript", "Mul
 heroImage: "/projects-cuff-the-bluff.svg"
 ---
 
-# Cuff the Bluff – Multiplayer Dice Bluffing Game
-
 ## 📌 Overview
 Cuff the Bluff is a **real-time multiplayer dice bluffing game** based on the classic Liar's Dice concept. Up to 15 players compete in a single room — no account, no install, works on any modern browser. The last player standing with dice wins.
 

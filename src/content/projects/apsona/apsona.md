@@ -6,8 +6,6 @@ tags: ["salesforce", "apsona", "automation", "aws", "vault"]
 heroImage: "/apsona.png"
 ---
 
-# Apsona for Salesforce
-
 ## 📌 Overview
 Apsona for Salesforce is a productivity and automation platform built on top of Salesforce, designed to extend CRM capabilities with reporting, document automation, and workflow tools.  
 It allows Salesforce users to generate complex reports, automate document merges, and integrate external services without leaving the Salesforce environment.  

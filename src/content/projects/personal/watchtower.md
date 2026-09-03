@@ -6,8 +6,6 @@ tags: ["React", "TypeScript", "Node.js", "Fastify", "PostgreSQL", "Redis", "Bull
 heroImage: "/projects-watchtower.png"
 ---
 
-# WatchTower – Web Scraping & Notification Platform
-
 ## 📌 Overview
 WatchTower is a **web scraping and notification automation platform** that monitors websites, RSS feeds, and JSON APIs for new content. When new posts are detected, they're delivered in real time to Discord, Slack, Telegram, or any custom webhook endpoint.
 

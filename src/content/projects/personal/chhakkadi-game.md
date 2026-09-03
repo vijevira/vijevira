@@ -2,6 +2,7 @@
 title: "Chhakkadi Online Card Games"
 description: "Real-time multiplayer Indian card game platform with 3 game variants — Chhakkadi, Dehla Pakad, and Call Break — built with React, Socket.IO, and Node.js"
 pubDate: "2026-05-02"
+updatedDate: "2026-09-03"
 tags: ["React", "Socket.IO", "Node.js", "Express", "Multiplayer Game", "Card Game", "WebSockets", "Cloudflare", "Cloudflare Durable Objects", "Railway", "JavaScript", "Dehla Pakad", "Call Break", "Bot Player", "Android", "Capacitor"]
 heroImage: "/projects-chhakkadi.png"
 ---
