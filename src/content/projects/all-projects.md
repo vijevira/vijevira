@@ -138,7 +138,8 @@ A **real-time multiplayer card game platform** supporting three classic Indian t
 - Server-authoritative game logic with full rule enforcement: bidding, trump selection, trick resolution, scoring, and Gulam/Raja mechanics.
 - **Bot player support** via BotPlayer so games can start without a full lobby.
 - Dual deployment support: traditional Express + Socket.IO (Railway) and edge-native **Cloudflare Durable Objects** for stateful WebSocket rooms.
-- **Tech:** React, Vite, Socket.IO, Node.js, Express, Cloudflare Durable Objects.
+- **Android app** (Capacitor) with push notifications — available as a direct APK download from the site; not yet on the Play Store.
+- **Tech:** React, Vite, Socket.IO, Node.js, Express, Cloudflare Durable Objects, Capacitor.
 
 ---
 

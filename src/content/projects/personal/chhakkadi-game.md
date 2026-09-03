@@ -2,7 +2,7 @@
 title: "Chhakkadi Online Card Games"
 description: "Real-time multiplayer Indian card game platform with 3 game variants — Chhakkadi, Dehla Pakad, and Call Break — built with React, Socket.IO, and Node.js"
 pubDate: "2026-05-02"
-tags: ["React", "Socket.IO", "Node.js", "Express", "Multiplayer Game", "Card Game", "WebSockets", "Cloudflare", "Cloudflare Durable Objects", "Railway", "JavaScript", "Dehla Pakad", "Call Break", "Bot Player"]
+tags: ["React", "Socket.IO", "Node.js", "Express", "Multiplayer Game", "Card Game", "WebSockets", "Cloudflare", "Cloudflare Durable Objects", "Railway", "JavaScript", "Dehla Pakad", "Call Break", "Bot Player", "Android", "Capacitor"]
 heroImage: "/projects-chhakkadi.png"
 ---
 
@@ -14,6 +14,8 @@ Chhakkadi is a **real-time multiplayer Indian card game platform** supporting th
 The project is built with a **React frontend** and a **Node.js + Socket.IO backend** for low-latency real-time communication. The backend supports two deployment modes: a traditional Express server (Railway) and a modern Cloudflare Durable Objects setup for edge-native WebSocket handling.
 
 👉 Play the live game here: [chhakkadi.endra.in](https://chhakkadi.endra.in)
+
+📱 An Android app is also available — built with Capacitor, wrapping the same React frontend with push notifications. It's a direct APK download from the site (not yet published to the Play Store): [chhakkadi.endra.in/downloads/chhakkadi.apk](https://chhakkadi.endra.in/downloads/chhakkadi.apk)
 
 ---
 
@@ -86,6 +88,11 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 - Socket.IO
 - Custom game classes: `GameRoom`, `DehlaRoom`, `CallbreakRoom`, `BotPlayer`
 
+### Android
+- [Capacitor](https://capacitorjs.com/) wraps the existing React frontend for a native Android build
+- Push & local notifications, status bar theming
+- Distributed as a direct APK download from the site (Play Store submission pending)
+
 ### Deployment
 - **Option A (Traditional):** Frontend on Cloudflare Pages · Backend on [Railway](https://railway.com?referralCode=oHqhM6)
 - **Option B (Edge):** Frontend + Backend on Cloudflare Workers using **Cloudflare Durable Objects** for stateful WebSocket rooms
@@ -149,6 +156,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 - Frontend: https://chhakkadi.endra.in
 - Backend API: https://api-chakkaddi.endra.in
 - Cloudflare Worker: https://api.chhakkadi.endra.in
+- Android APK: https://chhakkadi.endra.in/downloads/chhakkadi.apk
 
 ### GitHub
 - [github.com/vijevira/Chhakkadi](https://github.com/vijevira/Chhakkadi)
