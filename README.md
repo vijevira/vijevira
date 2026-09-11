@@ -1,62 +1,80 @@
-# Astro Starter Kit: Projects
+# vijevira.in — Portfolio Site
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-vijevira)
+Personal portfolio and project showcase for **Vijendra Kumar**, Senior Software Engineer.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+Built with [Astro](https://astro.build) and deployed on [Cloudflare Workers](https://workers.cloudflare.com).
 
-<!-- dash-content-start -->
+🌐 **Live site:** [vijevira.in](https://vijevira.in)
 
-Create a projects with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+---
 
-Features:
+## About
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+This site documents professional work and personal projects — real-time systems, SaaS platforms, multiplayer games, and Salesforce integrations, all shipped to production.
 
-<!-- dash-content-end -->
+- **Resume:** [vijevira.in/resume](https://vijevira.in/resume)
+- **All Projects:** [vijevira.in/projects](https://vijevira.in/projects)
+- **GitHub:** [github.com/vijevira](https://github.com/vijevira)
 
-## Getting Started
+---
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+## Project Highlights
+
+### Personal Projects
+
+| Project | Description | Live |
+|---|---|---|
+| [Zyvora](src/content/projects/personal/zyvora.md) | Jira-like SaaS PM platform — Kanban, sprints, real-time, RBAC, BullMQ | [zyvora.endra.in](https://zyvora.endra.in) |
+| [WatchTower](src/content/projects/personal/watchtower.md) | Web scraping & notification platform — BullMQ pipeline, Discord/Slack/Telegram | [watchtower.wasmer.app](https://watchtower.wasmer.app) |
+| [BlindShare](src/content/projects/personal/blindshare.md) | P2P secure sharing suite — WebRTC, zero-persistence, DTLS encrypted | [blindshare.in](https://blindshare.in) |
+| [BlindParty](src/content/projects/personal/blindparty.md) | P2P watch party & video call — full mesh WebRTC, screen share, group chat | [party.blindshare.in](https://party.blindshare.in) |
+| [Chhakkadi](src/content/projects/personal/chhakkadi-game.md) | 3 Indian card games, real-time multiplayer with bot AI | [chhakkadi.endra.in](https://chhakkadi.endra.in) |
+| [Cuff the Bluff](src/content/projects/personal/cuff-the-bluff.md) | Liar's Dice, 2–15 players, Cloudflare DO | [cuffthebluff.endra.in](https://cuffthebluff.endra.in) |
+| [Splendor](src/content/projects/personal/splendor.md) | Digital Splendor board game, 2–12 players | [splendor.endra.in](https://splendor.endra.in) |
+| [Cabo](src/content/projects/personal/cabo-card-game.md) | Cabo card game, 2–15 players, Cloudflare DO | [cabo.endra.in](https://cabo.endra.in) |
+
+### Apsona Work
+- [Triggered Merge](src/content/projects/apsona/triggered-merge.md) — end-to-end Salesforce → AWS → merge pipeline
+
+---
+
+## Tech Stack
+
+- **Framework:** [Astro](https://astro.build) with MDX
+- **Deployment:** [Cloudflare Workers](https://workers.cloudflare.com) (static assets)
+- **Content:** Markdown / MDX content collections
+- **Extras:** Sitemap (`@astrojs/sitemap`), `llms.txt`, `robots.txt`
+
+---
+
+## Commands
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-vijevira
+npm install          # install dependencies
+npm run dev          # dev server at localhost:4321
+npm run build        # build to ./dist/
+npm run preview      # preview build locally
+npm run deploy       # build + deploy to Cloudflare
 ```
 
-A live public deployment of this template is available at [https://astro-vijevira.templates.workers.dev](https://astro-vijevira.templates.workers.dev)
+---
 
-## 🚀 Project Structure
+## Structure
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/projects/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Projects](https://github.com/HermanMartinus/bearblog/).
+```
+src/
+├── content/
+│   └── projects/
+│       ├── personal/     # personal project write-ups
+│       ├── apsona/       # Apsona work
+│       └── pratishthan/  # Pratishthan work
+├── pages/
+│   ├── index.astro
+│   ├── resume.astro
+│   └── projects/
+└── components/
+public/
+├── llms.txt              # LLM-friendly site index
+├── robots.txt
+└── projects-*.svg/png    # hero images
+```

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </radialGradient>
+    <radialGradient id="glowC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fblur">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg2)"/>
+
+  <!-- Center glow -->
+  <ellipse cx="400" cy="215" rx="180" ry="160" fill="url(#glowC)" filter="url(#fblur)"/>
+
+  <!-- Mesh connection lines between 4 peers -->
+  <!-- A-B, A-C, A-D, B-C, B-D, C-D -->
+  <g stroke="#a78bfa" stroke-width="1.2" opacity="0.35" stroke-dasharray="5 5">
+    <line x1="220" y1="165" x2="480" y2="165"/>
+    <line x1="220" y1="165" x2="220" y2="300"/>
+    <line x1="220" y1="165" x2="480" y2="300"/>
+    <line x1="480" y1="165" x2="220" y2="300"/>
+    <line x1="480" y1="165" x2="480" y2="300"/>
+    <line x1="220" y1="300" x2="480" y2="300"/>
+  </g>
+
+  <!-- Peer A: top-left -->
+  <g transform="translate(162, 100)">
+    <circle cx="58" cy="58" r="46" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1.5"/>
+    <!-- Camera icon -->
+    <rect x="34" y="44" width="30" height="22" rx="4" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <polyline points="64,50 76,44 76,66 64,58" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linejoin="round"/>
+    <text x="58" y="120" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="11" fill="#94a3b8">Peer A</text>
+  </g>
+
+  <!-- Peer B: top-right -->
+  <g transform="translate(422, 100)">
+    <circle cx="58" cy="58" r="46" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1.5"/>
+    <!-- Camera icon -->
+    <rect x="34" y="44" width="30" height="22" rx="4" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <polyline points="64,50 76,44 76,66 64,58" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linejoin="round"/>
+    <text x="58" y="120" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="11" fill="#94a3b8">Peer B</text>
+  </g>
+
+  <!-- Peer C: bottom-left -->
+  <g transform="translate(162, 238)">
+    <circle cx="58" cy="58" r="46" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+    <!-- Camera icon -->
+    <rect x="34" y="44" width="30" height="22" rx="4" fill="none" stroke="#818cf8" stroke-width="2"/>
+    <polyline points="64,50 76,44 76,66 64,58" fill="none" stroke="#818cf8" stroke-width="2" stroke-linejoin="round"/>
+    <text x="58" y="120" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="11" fill="#94a3b8">Peer C</text>
+  </g>
+
+  <!-- Peer D: bottom-right -->
+  <g transform="translate(422, 238)">
+    <circle cx="58" cy="58" r="46" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+    <!-- Camera icon -->
+    <rect x="34" y="44" width="30" height="22" rx="4" fill="none" stroke="#818cf8" stroke-width="2"/>
+    <polyline points="64,50 76,44 76,66 64,58" fill="none" stroke="#818cf8" stroke-width="2" stroke-linejoin="round"/>
+    <text x="58" y="120" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="11" fill="#94a3b8">Peer D</text>
+  </g>
+
+  <!-- Screen share panel on right -->
+  <g transform="translate(580, 130)">
+    <rect x="0" y="0" width="170" height="110" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+    <!-- Screen content lines -->
+    <rect x="12" y="14" width="146" height="8" rx="3" fill="#22d3ee" opacity="0.2"/>
+    <rect x="12" y="28" width="100" height="6" rx="3" fill="#22d3ee" opacity="0.12"/>
+    <rect x="12" y="40" width="120" height="6" rx="3" fill="#22d3ee" opacity="0.12"/>
+    <rect x="12" y="52" width="80" height="6" rx="3" fill="#22d3ee" opacity="0.12"/>
+    <!-- Monitor label -->
+    <text x="85" y="90" text-anchor="middle" font-family="monospace" font-size="10" fill="#22d3ee" opacity="0.7">Screen Share</text>
+    <!-- Cast arrow -->
+    <text x="155" y="14" text-anchor="end" font-family="monospace" font-size="12" fill="#22d3ee" opacity="0.8">⊳</text>
+  </g>
+
+  <!-- Chat bubble bottom right -->
+  <g transform="translate(580, 258)">
+    <rect x="0" y="0" width="170" height="76" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.2"/>
+    <rect x="12" y="14" width="90" height="8" rx="4" fill="#a78bfa" opacity="0.3"/>
+    <rect x="12" y="30" width="120" height="8" rx="4" fill="#a78bfa" opacity="0.2"/>
+    <rect x="12" y="46" width="70" height="8" rx="4" fill="#a78bfa" opacity="0.15"/>
+    <text x="158" y="76" text-anchor="end" font-family="monospace" font-size="10" fill="#a78bfa" opacity="0.7">chat (P2P)</text>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="44" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="700" fill="#f1f5f9" letter-spacing="-0.5">BlindParty</text>
+  <text x="400" y="70" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" fill="#64748b" letter-spacing="1">WATCH · CALL · CHAT · FULL MESH P2P</text>
+
+  <!-- Signaling note -->
+  <text x="400" y="425" text-anchor="middle" font-family="monospace" font-size="10" fill="#334155">signaling server: SDP + ICE only  ·  no payload, no persistence</text>
+
+  <!-- Corner label -->
+  <text x="750" y="430" text-anchor="end" font-family="monospace" font-size="11" fill="#334155">party.blindshare.in</text>
+</svg>

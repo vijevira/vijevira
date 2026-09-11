@@ -1,0 +1,86 @@
+# Vijendra Kumar — Portfolio
+
+> Senior Software Engineer specializing in backend systems, real-time applications, Salesforce integrations, and edge-native deployments. This site documents professional work at Apsona and personal projects shipped to production.
+
+## About
+
+Vijendra Kumar is a Senior Software Engineer based in Bangalore, India. Currently at Apsona (Sep 2024–present), previously at Pratishthan Software Ventures (fintech/payment systems) and Tata Consultancy Services.
+
+- Site: https://vijevira.in
+- Email: vijevira@engineer.com
+- GitHub: https://github.com/vijevira
+- LinkedIn: https://linkedin.com/in/vijevira
+
+## Professional Work
+
+### Apsona for Salesforce
+https://vijevira.in/projects/apsona/triggered-merge
+
+End-to-end Triggered Merge: Salesforce Flow → Platform Event → Apex Trigger → AWS API Gateway → Lambda (JWT/HMAC auth) → merge execution → Event Log and Run Result custom objects. Includes replay mechanism, configurable Scheduled Apex cleanup, internal monitoring dashboard, and one-click dry-run health check with Slack/email alerts.
+
+Also: apsona_nexus_svc (Node.js + HashiCorp Vault), PDF pipeline, LWC Merge button, Excel Merge automation, Node.js v8→v18 upgrade, >90% Jest+Supertest coverage.
+
+### Pratishthan — Finacle Payment Systems
+SEPA, QCBIP, UAERT real-time interbank transfer systems. RCPI/NCPI SLA compliance, NACH outbound/inbound, SEPA Recall lead-day validation, SWIFT charge calculation.
+
+## Personal Projects
+
+### Zyvora — SaaS Project Management
+https://vijevira.in/projects/personal/zyvora
+https://zyvora.endra.in
+
+Jira-like SaaS platform: Kanban, sprints, timeline views, multi-tenant RBAC, real-time via Socket.IO, BullMQ notification pipeline. TypeScript monorepo with Turborepo. Frontend on Cloudflare Workers, backend on Render.
+Stack: React, Vite, Fastify, PostgreSQL, Redis, BullMQ, Drizzle ORM, TanStack Query, Zustand, Docker, Wrangler.
+
+### WatchTower — Scraping & Notification Platform
+https://vijevira.in/projects/personal/watchtower
+https://watchtower.wasmer.app
+
+Monitors HTML pages, RSS feeds, and JSON APIs for changes; delivers to Discord, Slack, and Telegram via a 3-stage BullMQ pipeline (Monitor → Processing → Delivery). Full-stack on Wasmer.io.
+Stack: TypeScript, Fastify, BullMQ, PostgreSQL, Redis, Drizzle ORM, Cheerio.
+
+### Chhakkadi — Indian Card Game Platform
+https://vijevira.in/projects/personal/chhakkadi-game
+https://chhakkadi.endra.in
+
+Real-time platform for 3 Indian card games: Chhakkadi, Dehla Pakad, Call Break. Bot AI players, server-authoritative rules, dual deployment (Cloudflare Durable Objects + Railway).
+Stack: React, Node.js, Socket.IO, TypeScript.
+
+### BlindShare — P2P Secure Sharing Suite
+https://vijevira.in/projects/personal/blindshare
+https://blindshare.in
+
+Zero-persistence P2P file, text, code, and media sharing. Six tools: BlindDrop (files), BlindText, BlindSnippet, BlindSecret, BlindShow (view-once media), BlindCast (screen share). All data is DTLS-encrypted WebRTC; signaling server holds no payloads.
+Stack: React, Vite, TypeScript, Node.js, WebRTC RTCDataChannel + MediaStream. Frontend on Cloudflare, signaling on Faable.
+
+### BlindParty — P2P Watch Party & Video Call
+https://vijevira.in/projects/personal/blindparty
+https://party.blindshare.in
+
+Small-group (≤6) watch party, video call, and ephemeral group chat over a full WebRTC mesh. Screen share, camera/mic with mid-call renegotiation, data-channel group chat. Zero server-side persistence.
+Stack: React, Vite, TypeScript, Node.js, RTCPeerConnection (per-peer full mesh), getDisplayMedia. Frontend on Cloudflare, signaling on Faable.
+
+### Multiplayer Card & Board Games (Cloudflare Workers + Durable Objects)
+
+- **Cuff the Bluff** (Liar's Dice, 2–15 players, bot AI): https://cuffthebluff.endra.in
+- **Splendor** (board game, 2–12 players, bot AI, procedural SVG art): https://splendor.endra.in
+- **Cabo** (card game, 2–15 players, bot AI, Show mechanic): https://cabo.endra.in
+
+All built with TypeScript, Cloudflare Workers, Durable Objects (one DO per room), WebSockets.
+
+## Skills
+
+Languages: TypeScript, JavaScript, Python, Apex (Salesforce)
+Backend: Node.js, Fastify, Express, Socket.IO, BullMQ, Drizzle ORM
+Frontend: React, Vite, TailwindCSS, TanStack Query, Zustand, LWC
+Databases: PostgreSQL, Redis, SQLite, RabbitMQ
+Cloud: AWS Lambda, API Gateway, ECS, Cloudflare Workers, Durable Objects, Wasmer, Docker, Turborepo
+Other: HashiCorp Vault, Salesforce Platform Events, WebRTC, Git, Zod, Cheerio
+
+## Contact & Links
+
+- Portfolio: https://vijevira.in
+- Resume: https://vijevira.in/resume
+- All Projects: https://vijevira.in/projects
+- GitHub: https://github.com/vijevira
+- LinkedIn: https://linkedin.com/in/vijevira
