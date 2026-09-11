@@ -211,6 +211,34 @@ A **real-time multiplayer Cabo card game** for 2–15 players with bot AI, built
 
 ---
 
+### [BlindShare – P2P Secure Sharing Suite](/projects/personal/blindshare/)
+**Sep 2026**
+
+A **peer-to-peer sharing suite** built on WebRTC — every byte travels directly between two browsers, DTLS-encrypted by the browser itself. The signaling server sees only SDP/ICE handshake metadata and holds nothing else.
+
+- Six purpose-built tools: **BlindDrop** (files), **BlindText** (messages), **BlindSnippet** (code with syntax highlighting), **BlindSecret** (credential-safe masked field), **BlindShow** (view-once media), **BlindCast** (live P2P screen share).
+- Files chunked as 16–64 KB `ArrayBuffer` slices over `RTCDataChannel`, reassembled as a `Blob` on the receiver — no upload, no cloud storage.
+- **Zero-knowledge signaling server** — in-memory room state only during handshake, no payloads, no logs, no database.
+- **Tech:** React, Vite, TypeScript, Node.js, WebRTC (`RTCDataChannel`, `MediaStream`), WebSocket signaling.
+- **Deployed:** Frontend on Cloudflare (blindshare.in) · Signaling on Faable.
+
+---
+
+### [BlindParty – P2P Watch Party & Video Call](/projects/personal/blindparty/)
+**Sep 2026**
+
+A **P2P watch party and video calling app** for small groups — camera, mic, screen sharing, and ephemeral group chat, all flowing directly between browsers over a full WebRTC mesh.
+
+- **Watch party:** share your screen, tab, or window; all participants watch P2P in real time. (DRM-protected content — Netflix, Prime, Hotstar — is blocked by HDCP/output-protection; works with local video, YouTube, games, slides.)
+- **Video call:** camera + mic grid for all participants, per-peer mute/camera toggles, connection-state indicators.
+- **Group chat:** ephemeral text fanned out peer-to-peer over each participant's `RTCDataChannel` — never touches the server.
+- **Renegotiation-capable:** camera, mic, and screen share can be toggled mid-call without dropping connections (`useGroupWebRTC` hook manages one `RTCPeerConnection` per peer).
+- Max room size: 6 peers (full mesh; SFU like mediasoup/LiveKit needed beyond that).
+- **Tech:** React, Vite, TypeScript, Node.js, WebRTC (`RTCPeerConnection` per peer, `getDisplayMedia`), WebSocket signaling.
+- **Deployed:** Frontend on Cloudflare (party.blindshare.in) · Signaling on Faable.
+
+---
+
 ### [Notes App](/projects/personal/notes-app/)
 **Aug 2024**
 
