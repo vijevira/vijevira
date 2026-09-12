@@ -1,86 +1,43 @@
-# Vijendra Kumar — Portfolio
+# Vijendra Kumar
 
-> Senior Software Engineer specializing in backend systems, real-time applications, Salesforce integrations, and edge-native deployments. This site documents professional work at Apsona and personal projects shipped to production.
+> Portfolio of Vijendra Kumar, a Senior Software Engineer based in Bangalore, India, specializing in backend systems, real-time applications, Salesforce integrations, and edge-native deployments. This site documents professional work at Apsona and personal projects shipped to production.
 
-## About
+Currently at Apsona (Sep 2024–present). Previously at Pratishthan Software Ventures (Finacle payment systems) and Tata Consultancy Services. Core stack: TypeScript, Node.js, React, PostgreSQL, Redis, AWS Lambda, and Cloudflare Workers + Durable Objects.
 
-Vijendra Kumar is a Senior Software Engineer based in Bangalore, India. Currently at Apsona (Sep 2024–present), previously at Pratishthan Software Ventures (fintech/payment systems) and Tata Consultancy Services.
+## Core Pages
 
-- Site: https://vijevira.in
-- Email: vijevira@engineer.com
-- GitHub: https://github.com/vijevira
-- LinkedIn: https://linkedin.com/in/vijevira
-
-## Professional Work
-
-### Apsona for Salesforce
-https://vijevira.in/projects/apsona/triggered-merge
-
-End-to-end Triggered Merge: Salesforce Flow → Platform Event → Apex Trigger → AWS API Gateway → Lambda (JWT/HMAC auth) → merge execution → Event Log and Run Result custom objects. Includes replay mechanism, configurable Scheduled Apex cleanup, internal monitoring dashboard, and one-click dry-run health check with Slack/email alerts.
-
-Also: apsona_nexus_svc (Node.js + HashiCorp Vault), PDF pipeline, LWC Merge button, Excel Merge automation, Node.js v8→v18 upgrade, >90% Jest+Supertest coverage.
-
-### Pratishthan — Finacle Payment Systems
-SEPA, QCBIP, UAERT real-time interbank transfer systems. RCPI/NCPI SLA compliance, NACH outbound/inbound, SEPA Recall lead-day validation, SWIFT charge calculation.
+- [Home](https://vijevira.in): Portfolio landing page and project index.
+- [Resume](https://vijevira.in/resume): Full professional resume — experience, skills, education, achievements.
+- [All Projects](https://vijevira.in/projects/all-projects/): Complete index of every project with detailed write-ups.
 
 ## Personal Projects
 
-### Zyvora — SaaS Project Management
-https://vijevira.in/projects/personal/zyvora
-https://zyvora.endra.in
+- [Zyvora](https://vijevira.in/projects/personal/zyvora/): Jira-like SaaS project management platform with Kanban, sprints, timeline views, multi-tenant RBAC, Socket.IO real-time collaboration, and a BullMQ notification pipeline. TypeScript monorepo. Live at [zyvora.endra.in](https://zyvora.endra.in).
+- [WatchTower](https://vijevira.in/projects/personal/watchtower/): SaaS platform monitoring HTML pages, RSS feeds, and JSON APIs for changes, delivering to Discord, Slack, and Telegram via a three-stage BullMQ pipeline. Live at [watchtower.wasmer.app](https://watchtower.wasmer.app).
+- [BlindShare](https://vijevira.in/projects/personal/blindshare/): Zero-persistence P2P sharing suite over WebRTC — files, text, code, secrets, view-once media, and screen share. Live at [blindshare.in](https://blindshare.in).
+- [BlindParty](https://vijevira.in/projects/personal/blindparty/): P2P watch party, video call, and ephemeral group chat for up to 6 peers over a full WebRTC mesh. Live at [party.blindshare.in](https://party.blindshare.in).
+- [Chhakkadi](https://vijevira.in/projects/personal/chhakkadi-game/): Real-time multiplayer platform for three Indian trick-taking card games — Chhakkadi, Dehla Pakad, and Call Break — with bot AI. Live at [chhakkadi.endra.in](https://chhakkadi.endra.in).
+- [Cuff the Bluff](https://vijevira.in/projects/personal/cuff-the-bluff/): Real-time Liar's Dice game for up to 15 players with probability-based bot AI on Cloudflare Durable Objects. Live at [cuffthebluff.endra.in](https://cuffthebluff.endra.in).
+- [Splendor](https://vijevira.in/projects/personal/splendor/): Full digital implementation of the Splendor board game for 2–12 players with bot AI and procedural SVG card art. Live at [splendor.endra.in](https://splendor.endra.in).
+- [Cabo](https://vijevira.in/projects/personal/cabo-card-game/): Real-time multiplayer Cabo card game for 2–15 players with bot AI and the Show mechanic. Live at [cabo.endra.in](https://cabo.endra.in).
+- [Notes App](https://vijevira.in/projects/personal/notes-app/): Google Keep–inspired note manager with tagging, search, archive, and reminders.
 
-Jira-like SaaS platform: Kanban, sprints, timeline views, multi-tenant RBAC, real-time via Socket.IO, BullMQ notification pipeline. TypeScript monorepo with Turborepo. Frontend on Cloudflare Workers, backend on Render.
-Stack: React, Vite, Fastify, PostgreSQL, Redis, BullMQ, Drizzle ORM, TanStack Query, Zustand, Docker, Wrangler.
+## Professional Work
 
-### WatchTower — Scraping & Notification Platform
-https://vijevira.in/projects/personal/watchtower
-https://watchtower.wasmer.app
+- [Apsona Triggered Merge](https://vijevira.in/projects/apsona/triggered-merge/): End-to-end Salesforce document automation — Flow to Platform Event to Apex Trigger to AWS API Gateway to Lambda, with license validation, replay mechanism, configurable Scheduled Apex cleanup, and an internal monitoring dashboard.
+- [SEPA Payment System](https://vijevira.in/projects/pratishthan/sepa-payment/): Single Euro Payments Area outbound and inbound collections, Recall lead-day validation, Return and Reject handling with sanction checks.
+- [QCBIP Payment System](https://vijevira.in/projects/pratishthan/qcbip-payment/): Qatar real-time payment system for sponsor and destination banks with sub-second SLA compliance.
+- [UAERT Payment System](https://vijevira.in/projects/pratishthan/uaert-payment/): UAE real-time payment system with RCPI and NCPI flow enhancements.
+- [NACH Payment System](https://vijevira.in/projects/pratishthan/nach-payment/): National Automated Clearing House outbound payments and inbound collections.
+- [SWIFT Payment System](https://vijevira.in/projects/pratishthan/swift-payment/): Charge calculation and partTrans creation for accurate settlements.
 
-Monitors HTML pages, RSS feeds, and JSON APIs for changes; delivers to Discord, Slack, and Telegram via a 3-stage BullMQ pipeline (Monitor → Processing → Delivery). Full-stack on Wasmer.io.
-Stack: TypeScript, Fastify, BullMQ, PostgreSQL, Redis, Drizzle ORM, Cheerio.
+## Contact
 
-### Chhakkadi — Indian Card Game Platform
-https://vijevira.in/projects/personal/chhakkadi-game
-https://chhakkadi.endra.in
+- [GitHub](https://github.com/vijevira): Open-source repositories and project source code.
+- [LinkedIn](https://linkedin.com/in/vijevira): Professional profile and work history.
+- [Email](mailto:vijevira@engineer.com): Direct contact.
 
-Real-time platform for 3 Indian card games: Chhakkadi, Dehla Pakad, Call Break. Bot AI players, server-authoritative rules, dual deployment (Cloudflare Durable Objects + Railway).
-Stack: React, Node.js, Socket.IO, TypeScript.
+## Optional
 
-### BlindShare — P2P Secure Sharing Suite
-https://vijevira.in/projects/personal/blindshare
-https://blindshare.in
-
-Zero-persistence P2P file, text, code, and media sharing. Six tools: BlindDrop (files), BlindText, BlindSnippet, BlindSecret, BlindShow (view-once media), BlindCast (screen share). All data is DTLS-encrypted WebRTC; signaling server holds no payloads.
-Stack: React, Vite, TypeScript, Node.js, WebRTC RTCDataChannel + MediaStream. Frontend on Cloudflare, signaling on Faable.
-
-### BlindParty — P2P Watch Party & Video Call
-https://vijevira.in/projects/personal/blindparty
-https://party.blindshare.in
-
-Small-group (≤6) watch party, video call, and ephemeral group chat over a full WebRTC mesh. Screen share, camera/mic with mid-call renegotiation, data-channel group chat. Zero server-side persistence.
-Stack: React, Vite, TypeScript, Node.js, RTCPeerConnection (per-peer full mesh), getDisplayMedia. Frontend on Cloudflare, signaling on Faable.
-
-### Multiplayer Card & Board Games (Cloudflare Workers + Durable Objects)
-
-- **Cuff the Bluff** (Liar's Dice, 2–15 players, bot AI): https://cuffthebluff.endra.in
-- **Splendor** (board game, 2–12 players, bot AI, procedural SVG art): https://splendor.endra.in
-- **Cabo** (card game, 2–15 players, bot AI, Show mechanic): https://cabo.endra.in
-
-All built with TypeScript, Cloudflare Workers, Durable Objects (one DO per room), WebSockets.
-
-## Skills
-
-Languages: TypeScript, JavaScript, Python, Apex (Salesforce)
-Backend: Node.js, Fastify, Express, Socket.IO, BullMQ, Drizzle ORM
-Frontend: React, Vite, TailwindCSS, TanStack Query, Zustand, LWC
-Databases: PostgreSQL, Redis, SQLite, RabbitMQ
-Cloud: AWS Lambda, API Gateway, ECS, Cloudflare Workers, Durable Objects, Wasmer, Docker, Turborepo
-Other: HashiCorp Vault, Salesforce Platform Events, WebRTC, Git, Zod, Cheerio
-
-## Contact & Links
-
-- Portfolio: https://vijevira.in
-- Resume: https://vijevira.in/resume
-- All Projects: https://vijevira.in/projects
-- GitHub: https://github.com/vijevira
-- LinkedIn: https://linkedin.com/in/vijevira
+- [Sitemap](https://vijevira.in/sitemap-index.xml): Machine-readable index of every page on this site.
+- [RSS Feed](https://vijevira.in/rss.xml): Subscribe to new project write-ups.
