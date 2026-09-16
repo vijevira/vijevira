@@ -7,6 +7,7 @@ Currently at Apsona (Sep 2024–present). Previously at Pratishthan Software Ven
 ## Core Pages
 
 - [Home](https://vijevira.in): Portfolio landing page and project index.
+- [About](https://vijevira.in/about): Background, career history, certifications, and achievements.
 - [Resume](https://vijevira.in/resume): Full professional resume — experience, skills, education, achievements.
 - [All Projects](https://vijevira.in/projects/all-projects/): Complete index of every project with detailed write-ups.
 
