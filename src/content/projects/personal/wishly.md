@@ -1,7 +1,7 @@
 ---
 title: "Wishly - Automated Greetings & Milestone Reminders"
 description: "Schedule birthday and anniversary wishes that send from your own WhatsApp, email, Telegram, Discord, or Slack — with interactive greeting cards and group co-signing"
-pubDate: "2026-09-20"
+pubDate: "2026-10-03"
 updatedDate: "2026-10-03"
 tags: ["TypeScript", "React", "Vite", "TailwindCSS", "Node.js", "Express", "PostgreSQL", "Prisma", "Socket.IO", "Baileys", "WhatsApp", "Telegram", "MTProto", "Nodemailer", "AES-256-GCM", "Docker", "Vercel"]
 heroImage: "/projects-wishly.svg"

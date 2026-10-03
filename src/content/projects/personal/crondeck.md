@@ -1,7 +1,7 @@
 ---
 title: "CronDeck - Cron Jobs & Uptime Monitoring"
 description: "Developer-focused cron-as-a-service — schedule HTTP requests, inspect every execution, and monitor uptime with heartbeats, alerts, and public status pages"
-pubDate: "2026-09-15"
+pubDate: "2026-09-25"
 updatedDate: "2026-10-02"
 tags: ["TypeScript", "Deno", "Deno Deploy", "Hono", "SQLite", "Turso", "libSQL", "Cron", "Uptime Monitoring", "Status Pages", "SSRF Protection", "Cloudflare Workers", "Vercel Edge"]
 heroImage: "/projects-crondeck.svg"
