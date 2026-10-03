@@ -2,8 +2,8 @@
 title: "Chhakkadi Online Card Games"
 description: "Real-time multiplayer Indian card game platform with 3 game variants — Chhakkadi, Dehla Pakad, and Call Break — built with React, Socket.IO, and Node.js"
 pubDate: "2026-05-02"
-updatedDate: "2026-09-03"
-tags: ["React", "Socket.IO", "Node.js", "Express", "Multiplayer Game", "Card Game", "WebSockets", "Cloudflare", "Cloudflare Durable Objects", "Railway", "JavaScript", "Dehla Pakad", "Call Break", "Bot Player", "Android", "Capacitor"]
+updatedDate: "2026-10-03"
+tags: ["React", "Socket.IO", "Node.js", "Express", "Multiplayer Game", "Card Game", "WebSockets", "Cloudflare", "Cloudflare Durable Objects", "Railway", "JavaScript", "Dehla Pakad", "Call Break", "Bot Player", "Android", "Capacitor", "Play Store"]
 heroImage: "/projects-chhakkadi.png"
 ---
 
@@ -16,7 +16,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 
 👉 Play the live game here: [chhakkadi.endra.in](https://chhakkadi.endra.in)
 
-📱 An Android app is also available — built with Capacitor, wrapping the same React frontend with push notifications. It's a direct APK download from the site (not yet published to the Play Store): [chhakkadi.endra.in/downloads/chhakkadi.apk](https://chhakkadi.endra.in/downloads/chhakkadi.apk)
+📱 The Android app is live on Google Play — built with Capacitor, wrapping the same React frontend with push notifications: [Get it on Google Play](https://play.google.com/store/apps/details?id=in.endra.chhakkadi)
 
 ---
 
@@ -92,7 +92,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 ### Android
 - [Capacitor](https://capacitorjs.com/) wraps the existing React frontend for a native Android build
 - Push & local notifications, status bar theming
-- Distributed as a direct APK download from the site (Play Store submission pending)
+- Published on [Google Play](https://play.google.com/store/apps/details?id=in.endra.chhakkadi)
 
 ### Deployment
 - **Option A (Traditional):** Frontend on Cloudflare Pages · Backend on [Railway](https://railway.com?referralCode=oHqhM6)
@@ -157,7 +157,7 @@ The project is built with a **React frontend** and a **Node.js + Socket.IO backe
 - Frontend: https://chhakkadi.endra.in
 - Backend API: https://api-chakkaddi.endra.in
 - Cloudflare Worker: https://api.chhakkadi.endra.in
-- Android APK: https://chhakkadi.endra.in/downloads/chhakkadi.apk
+- Android app (Google Play): https://play.google.com/store/apps/details?id=in.endra.chhakkadi
 
 ### GitHub
 - [github.com/vijevira/Chhakkadi](https://github.com/vijevira/Chhakkadi)

@@ -28,7 +28,10 @@ This site documents professional work and personal projects — real-time system
 | [WatchTower](src/content/projects/personal/watchtower.md) | Web scraping & notification platform — BullMQ pipeline, Discord/Slack/Telegram | [watchtower.wasmer.app](https://watchtower.wasmer.app) |
 | [BlindShare](src/content/projects/personal/blindshare.md) | P2P secure sharing suite — WebRTC, zero-persistence, DTLS encrypted | [blindshare.in](https://blindshare.in) |
 | [BlindParty](src/content/projects/personal/blindparty.md) | P2P watch party & video call — full mesh WebRTC, screen share, group chat | [party.blindshare.in](https://party.blindshare.in) |
-| [Chhakkadi](src/content/projects/personal/chhakkadi-game.md) | 3 Indian card games, real-time multiplayer with bot AI | [chhakkadi.endra.in](https://chhakkadi.endra.in) |
+| [BlindChat](src/content/projects/personal/blindchat.md) | E2EE messenger — encrypted chats & media, P2P voice/video calls, Android (Play Store alpha) | [chat.endra.in](https://chat.endra.in) |
+| [CronDeck](src/content/projects/personal/crondeck.md) | Cron-as-a-service — scheduled HTTP jobs, execution history, uptime & status pages | [crondeck.cc.cd](https://crondeck.cc.cd) |
+| [Wishly](src/content/projects/personal/wishly.md) | Automated birthday/anniversary wishes from your own WhatsApp, email, Telegram, Discord, Slack | [wishly.cc.cd](https://wishly.cc.cd) |
+| [Chhakkadi](src/content/projects/personal/chhakkadi-game.md) | 3 Indian card games, real-time multiplayer with bot AI, Android app on Play Store | [chhakkadi.endra.in](https://chhakkadi.endra.in) · [Play Store](https://play.google.com/store/apps/details?id=in.endra.chhakkadi) |
 | [Cuff the Bluff](src/content/projects/personal/cuff-the-bluff.md) | Liar's Dice, 2–15 players, Cloudflare DO | [cuffthebluff.endra.in](https://cuffthebluff.endra.in) |
 | [Splendor](src/content/projects/personal/splendor.md) | Digital Splendor board game, 2–12 players | [splendor.endra.in](https://splendor.endra.in) |
 | [Cabo](src/content/projects/personal/cabo-card-game.md) | Cabo card game, 2–15 players, Cloudflare DO | [cabo.endra.in](https://cabo.endra.in) |

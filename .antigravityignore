@@ -1,0 +1,13 @@
+# folders
+secrets/
+private/
+**/.ssh/
+
+# file types
+*.pem
+*.key
+**/.env
+**/.env.*
+**/credentials.json
+**/startup**
+**/ApsonaServer/**

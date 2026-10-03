@@ -2,7 +2,7 @@
 title: "All Projects"
 description: "A complete, always-current index of every project — Apsona, Pratishthan payment systems, and personal builds — plus deep dives into each one."
 pubDate: "July 11 2026"
-updatedDate: "2026-09-11"
+updatedDate: "2026-10-03"
 heroImage: "/projects-all-projects.svg"
 pinned: true
 hidePubDate: true
@@ -152,7 +152,7 @@ A **real-time multiplayer card game platform** supporting three classic Indian t
 - Server-authoritative game logic with full rule enforcement: bidding, trump selection, trick resolution, scoring, and Gulam/Raja mechanics.
 - **Bot player support** via BotPlayer so games can start without a full lobby.
 - Dual deployment support: traditional Express + Socket.IO (Railway) and edge-native **Cloudflare Durable Objects** for stateful WebSocket rooms.
-- **Android app** (Capacitor) with push notifications — available as a direct APK download from the site; not yet on the Play Store.
+- **Android app** (Capacitor) with push notifications — live on [Google Play](https://play.google.com/store/apps/details?id=in.endra.chhakkadi).
 - **Tech:** React, Vite, Socket.IO, Node.js, Express, Cloudflare Durable Objects, Capacitor.
 
 ---
@@ -236,6 +236,48 @@ A **P2P watch party and video calling app** for small groups — camera, mic, sc
 - Max room size: 6 peers (full mesh; SFU like mediasoup/LiveKit needed beyond that).
 - **Tech:** React, Vite, TypeScript, Node.js, WebRTC (`RTCPeerConnection` per peer, `getDisplayMedia`), WebSocket signaling.
 - **Deployed:** Frontend on Cloudflare (party.blindshare.in) · Signaling on Faable.
+
+---
+
+### [BlindChat – End-to-End Encrypted Messenger](/projects/personal/blindchat/)
+**Sep 2026 – Present**
+
+A **WhatsApp-style messenger** with end-to-end encrypted chats and media, plus peer-to-peer voice and video calls, on the web and Android.
+
+- **E2EE in the browser:** ECDH key pairs per device, HKDF-SHA256 key derivation, AES-256-GCM for messages, photos, voice notes and video — the server only ever sees ciphertext.
+- 1:1 and group chats with read receipts, replies, reactions, edits, pinned and starred messages.
+- **P2P voice and video calls** with screen sharing, reusing BlindParty's signaling server.
+- Android app (Capacitor) with biometric lock, body-less push notifications, and foreground services that keep calls alive in the background.
+- **Tech:** React, Vite, Web Crypto API, WebRTC, WebSocket, Capacitor, Node.js, Prisma, PostgreSQL.
+- **Deployed:** Cloudflare Workers · [chat.endra.in](https://chat.endra.in) · Android on [Google Play](https://play.google.com/store/apps/details?id=in.endra.blindchat) (alpha testing).
+
+---
+
+### [CronDeck – Cron Jobs & Uptime Monitoring](/projects/personal/crondeck/)
+**Sep 2026 – Oct 2026**
+
+A **developer-focused cron-as-a-service** platform: schedule HTTP requests with cron expressions and inspect every execution.
+
+- Cron schedules with IANA timezones, custom methods/headers/bodies, encrypted auth, and full execution history (status, code, duration, headers, response excerpt).
+- **Uptime monitors, heartbeat checks, TLS expiry alerts, incidents and public status pages** with custom domains.
+- **SSRF-hardened** target validation: DNS-over-HTTPS resolution, private/reserved IP blocking (incl. IPv4-mapped IPv6), no redirect following.
+- 1-minute `Deno.cron` scheduler with lock-based job claiming and batched concurrent execution; REST API with API keys and tiered plans.
+- **Tech:** TypeScript, Deno, Hono, SQLite (Turso / libSQL), croner, Cloudflare Workers, Vercel Edge.
+- **Deployed:** Deno Deploy · [crondeck.cc.cd](https://crondeck.cc.cd)
+
+---
+
+### [Wishly – Automated Greetings & Milestone Reminders](/projects/personal/wishly/)
+**Sep 2026 – Oct 2026**
+
+An **automated greeting platform** that sends birthday and anniversary wishes from your own accounts — Bring Your Own Channel.
+
+- Delivers through personal **WhatsApp** (QR pairing via Baileys), **email** (SMTP), **Telegram** (bot + MTProto user session), **Discord** and **Slack**.
+- Interactive web greeting cards with reactions and a guestbook, plus **group co-signing** links with live Socket.IO updates.
+- Timezone-aware minute-level scheduler with advance reminders and per-year idempotency so no wish is sent twice.
+- AI wish generator, AI gift suggestions, and `.ics` calendar feed/import; channel credentials encrypted at rest with AES-256-GCM.
+- **Tech:** React, Vite, TypeScript, TailwindCSS, Node.js, Express, Prisma, PostgreSQL, Socket.IO, Docker.
+- **Deployed:** [wishly.cc.cd](https://wishly.cc.cd)
 
 ---
 

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1b2433"/>
+      <stop offset="100%" stop-color="#0b0f17"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <ellipse cx="400" cy="200" rx="230" ry="150" fill="url(#glow)" filter="url(#blur)"/>
+
+  <!-- Clock -->
+  <g transform="translate(250, 180)">
+    <circle r="62" fill="#111827" stroke="#f59e0b" stroke-width="2"/>
+    <g stroke="#f59e0b" stroke-opacity="0.5" stroke-width="2">
+      <line x1="0" y1="-52" x2="0" y2="-44"/><line x1="52" y1="0" x2="44" y2="0"/>
+      <line x1="0" y1="52" x2="0" y2="44"/><line x1="-52" y1="0" x2="-44" y2="0"/>
+    </g>
+    <line x1="0" y1="0" x2="0" y2="-36" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="26" y2="12" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+    <circle r="4" fill="#fde68a"/>
+  </g>
+  <!-- Execution log -->
+  <g font-family="ui-monospace, Menlo, monospace" font-size="13">
+    <rect x="350" y="112" width="250" height="136" rx="10" fill="#111827" stroke="#334155"/>
+    <text x="368" y="140" fill="#64748b">*/15 * * * *</text>
+    <circle cx="374" cy="168" r="5" fill="#22c55e"/><text x="388" y="172" fill="#cbd5e1">GET  200  142ms</text>
+    <circle cx="374" cy="194" r="5" fill="#22c55e"/><text x="388" y="198" fill="#cbd5e1">POST 201  311ms</text>
+    <circle cx="374" cy="220" r="5" fill="#ef4444"/><text x="388" y="224" fill="#cbd5e1">GET  503  30.0s</text>
+  </g>
+  <g fill="#22c55e">
+    <rect x="200" y="282" width="8" height="22" rx="2"/><rect x="212" y="282" width="8" height="22" rx="2"/><rect x="224" y="282" width="8" height="22" rx="2"/><rect x="236" y="282" width="8" height="22" rx="2"/><rect x="248" y="282" width="8" height="22" rx="2"/><rect x="260" y="282" width="8" height="22" rx="2"/><rect x="272" y="282" width="8" height="22" rx="2"/><rect x="284" y="282" width="8" height="22" rx="2"/><rect x="296" y="282" width="8" height="22" rx="2"/><rect x="308" y="282" width="8" height="22" rx="2"/><rect x="320" y="282" width="8" height="22" rx="2"/><rect x="332" y="282" width="8" height="22" rx="2"/><rect x="344" y="282" width="8" height="22" rx="2"/><rect x="356" y="282" width="8" height="22" rx="2"/><rect x="368" y="282" width="8" height="22" rx="2"/><rect x="380" y="282" width="8" height="22" rx="2"/><rect x="392" y="282" width="8" height="22" rx="2"/><rect x="404" y="282" width="8" height="22" rx="2"/><rect x="428" y="282" width="8" height="22" rx="2"/><rect x="440" y="282" width="8" height="22" rx="2"/><rect x="452" y="282" width="8" height="22" rx="2"/><rect x="464" y="282" width="8" height="22" rx="2"/><rect x="476" y="282" width="8" height="22" rx="2"/><rect x="488" y="282" width="8" height="22" rx="2"/><rect x="500" y="282" width="8" height="22" rx="2"/><rect x="512" y="282" width="8" height="22" rx="2"/><rect x="524" y="282" width="8" height="22" rx="2"/><rect x="536" y="282" width="8" height="22" rx="2"/><rect x="548" y="282" width="8" height="22" rx="2"/><rect x="560" y="282" width="8" height="22" rx="2"/><rect x="572" y="282" width="8" height="22" rx="2"/><rect x="584" y="282" width="8" height="22" rx="2"/>
+  </g>
+  <rect x="416" y="282" width="8" height="22" rx="2" fill="#ef4444"/>
+  <text x="400" y="362" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="30" font-weight="700" fill="#f8fafc">CronDeck</text>
+  <text x="400" y="390" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="13" fill="#94a3b8">Cron jobs · Execution history · Uptime &amp; status pages</text>
+</svg>

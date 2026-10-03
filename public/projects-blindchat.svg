@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#0f2a24"/>
+      <stop offset="100%" stop-color="#07130f"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <ellipse cx="400" cy="210" rx="220" ry="150" fill="url(#glow)" filter="url(#blur)"/>
+
+  <!-- Incoming bubble -->
+  <g>
+    <rect x="200" y="110" width="250" height="56" rx="16" fill="#132f29" stroke="#34d399" stroke-opacity="0.5"/>
+    <rect x="222" y="130" width="150" height="8" rx="4" fill="#6ee7b7" opacity="0.6"/>
+    <rect x="222" y="146" width="100" height="8" rx="4" fill="#6ee7b7" opacity="0.35"/>
+  </g>
+  <!-- Outgoing bubble -->
+  <g>
+    <rect x="350" y="188" width="250" height="56" rx="16" fill="#065f46" stroke="#34d399" stroke-opacity="0.7"/>
+    <rect x="372" y="208" width="170" height="8" rx="4" fill="#d1fae5" opacity="0.7"/>
+    <rect x="372" y="224" width="110" height="8" rx="4" fill="#d1fae5" opacity="0.45"/>
+    <path d="M556 228 l6 6 l12 -12 M566 228 l6 6 l12 -12" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Padlock -->
+  <g transform="translate(375, 270)">
+    <circle cx="25" cy="30" r="34" fill="#0b1f1a" stroke="#34d399" stroke-width="1.5"/>
+    <path d="M14 26 v-8 a11 11 0 0 1 22 0 v8" fill="none" stroke="#34d399" stroke-width="3"/>
+    <rect x="9" y="26" width="32" height="24" rx="4" fill="#34d399"/>
+    <circle cx="25" cy="37" r="3.5" fill="#0b1f1a"/>
+  </g>
+  <text x="400" y="372" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="30" font-weight="700" fill="#ecfdf5">BlindChat</text>
+  <text x="400" y="400" text-anchor="middle" font-family="'Segoe UI', system-ui" font-size="13" fill="#94a3b8">End-to-end encrypted chat · P2P calls · Web &amp; Android</text>
+</svg>
